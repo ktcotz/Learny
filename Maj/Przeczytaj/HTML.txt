@@ -1,0 +1,20 @@
+Temat: HTML
+
+HTML - Hyper Text Markup Language, po krótce język znaczników. Nie jest to język programowania!
+Korzystamy ze znaczników aby opisywać nasze elementy na stronie oraz je strukturyzować.
+Każdy znacznik zaczyną się od dyrektywy <> i kończy </>, gdzie pomiędzy wstawiamy jakiś element kluczowy.
+
+Przykład -> <p></p> (Paragraf).
+
+PROTIP - Użycie ! + TAB stworzy podstawową strukturę HTML dokumentu, która potem opisze dalej. (Pozwala na to tool Emmet).
+
+------------------- STRUKTURA PLIKU
+
+Każdy plik zaczyna się od głównego elementu html. Musi on obejmować cały plik w którym zamieszczamy tagi head i body.
+W każdym też pliku w 1 linii przed tagiem HTML ustawiamy dyrektywę <!DOCTYPE/> która wskazuje nam, że będzie pisany kod w najnowszej wersji HTML.
+
+W tagu head zamieszczamy informacje na temat strony które nie są widoczne, tytuł strony, znakowanie, linkowanie styli..
+W tagu body zamieszczamy informacje które chcemy aby były widoczne na stronie, paragrafy, nagłówki..
+Każde tagi które piszemy, piszemy z małych liter dla poprawności kodu HTML.
+
+Mocno polecam skorzystać z kursu dotyczącego Emmeta a także przeglądnąć dostępne linie komend!!

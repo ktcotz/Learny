@@ -1,0 +1,6 @@
+Temat: Atrybuty
+
+HTML umożliwia nam stosowanie atrybutów na naszych tagach, są to tak jakby dane dla naszego elementu.
+
+Najłatwiej to zobaczyć używając elementu img. Nie możemy do niego wrzucić zawartości jak do kazdego elementu, za to wrzucamy do niego zawartość za pomocą atrybutu src, któremu wskazujemy url do naszego zdjęcia. Nie które atrybuty są wymagane w elementach, np atrybut alt w zdjęciu jest wymagany ze względu na czytniki ekranowe.
+W momencie w którym zdjęćie się nie załaduje czytnik przeczyta osobie nie widomej co jest zawartością zdjęcia.

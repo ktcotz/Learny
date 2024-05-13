@@ -1,0 +1,28 @@
+Temat: Tagi
+
+Naukę tagów zaczniemy od nauki tagów dotyczących tekstu.
+Na pierwszy rzut - nagłówki. HTML umożliwia nam korzystanie z 6 nagłówków począwszy od h1 do h6.
+
+!! WAŻNE INFORMACJE NA TEMAT NAGŁÓWKÓW !!
+
+1. Nagłówek pierwszego stopnia może być tylko jeden na daną stronę, każda strona musi go mieć.
+2. Hierarchia nagłówków.
+3. Nagłówki muszą oznaczać jakąś sekcję naszego kodu, aby tworzyły logiczną hierarchię, np. mamy jakieś artykuły to w każdym artykule tytuł będzie h2.
+
+Komentarze - pozwalają nam komentować tekst, czyli tekst będzie nie widoczny ale kod będzie widoczny na stronie <!-- -->
+
+Paragraf - tworzenie bloku tekstu. <p></p>
+
+Strong|B - pogrubienie tekstu. <strong></strong> | <b></b>
+I|Em - pochylenie tekstu. <i></i> | <em></em>
+
+Dlaczego pokazuje dwa elementy? Róznią się one tym, że jeden z elementów niesie za sobą wartość semantyczną.
+
+Element b pogrubia tekst ale nie daje mu żadnej wartości, jest on tylko pogrubiony. Użytkownik który nie widzi nie będzie wiedział, że jest to jakaś ważna informacja. Jest to tylko wizualna zmiana. Z drugiej strony element strong daje taką wartość którą osoba nie widząca usłyszy.
+
+Ol|Ul - tworzenie list, uporządkowanych i nieuporządkowany.
+Li - item listy.
+
+Img - zdjęcie.
+
+!! Tworzenie strony z tagów powinniśmy bazować na tym jakie te tagi niosą za sobą wartości semantyczne, nie wizualne!
