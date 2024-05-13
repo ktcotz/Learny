@@ -23,6 +23,15 @@ Element b pogrubia tekst ale nie daje mu żadnej wartości, jest on tylko pogrub
 Ol|Ul - tworzenie list, uporządkowanych i nieuporządkowany.
 Li - item listy.
 
-Img - zdjęcie.
+Img - zdjęcie więcej o zdjęciu w pliku Atrybuty.txt.
+
+A - link, który może prowadzić do stron zewnętrznych albo do miejsc na naszej stronie, możemy też wyświetlać strony w innych kartach, albo zastępywać, wszystko te działania są zarządzane przez atrybuty href i target.
+
+Możemy zagnieżdżać elementy w elementach.
+
+HTML umożliwia nam też korzystanie z `HTML Entities` czyli znaków typu copyright, strzałki itp..
+Do kodów odsyłam do strony z kodami.
+
+Przykładowy kod -> Copyright (&copy;).
 
 !! Tworzenie strony z tagów powinniśmy bazować na tym jakie te tagi niosą za sobą wartości semantyczne, nie wizualne!

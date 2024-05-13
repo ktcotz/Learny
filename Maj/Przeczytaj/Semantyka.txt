@@ -1,0 +1,5 @@
+Temat: Semantyka
+
+Tworzenie naszej strony powinno być jak najbardziej semantyczne jak to możliwe. Co to znaczy?
+
+Powinniśmy strukturyzować naszą stronę za pomocą znaczników HTML5 czyt. header/footer/main.., powinniśmy używać elementów które sa przeznaczone do jakiegoś działania. A także używać elementów dla wartości użycia nie tego jak wyglądają.

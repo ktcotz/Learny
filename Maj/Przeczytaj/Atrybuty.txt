@@ -3,4 +3,12 @@ Temat: Atrybuty
 HTML umożliwia nam stosowanie atrybutów na naszych tagach, są to tak jakby dane dla naszego elementu.
 
 Najłatwiej to zobaczyć używając elementu img. Nie możemy do niego wrzucić zawartości jak do kazdego elementu, za to wrzucamy do niego zawartość za pomocą atrybutu src, któremu wskazujemy url do naszego zdjęcia. Nie które atrybuty są wymagane w elementach, np atrybut alt w zdjęciu jest wymagany ze względu na czytniki ekranowe.
-W momencie w którym zdjęćie się nie załaduje czytnik przeczyta osobie nie widomej co jest zawartością zdjęcia.
+W momencie w którym zdjęcie się nie załaduje czytnik przeczyta osobie nie widomej co jest zawartością zdjęcia.
+
+Dla elementu Img zawsze określamy width i height bazując na atrybutach HTML. Pozwala nam to w dużej mierze walczyć z przekształceniami layoutu co jest bardzo złe dla usera.
+
+W tagu head możemy używać elementów meta w których zawieramy atrybuty dotyczące naszej strony.
+
+<meta name="description" content=""/> pozwala na opisanie co jest na naszej stronie dla przeglądarek.
+
+Wszystkie elementy typu meta opisują naszą stronę dla przeglądarek.
