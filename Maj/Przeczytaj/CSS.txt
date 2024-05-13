@@ -1,0 +1,28 @@
+Temat: CSS
+
+CSS - Cascading Style Sheets, jest to jedna z kluczowych technologii w budowaniu stron internetowych.
+Tak jak HTML tworzy naszą strukturę strony, tak CSS pozwala na stylowanie naszej strony i nadawanie jej wyglądu.
+
+Przykładowy kod CSS:
+
+h1{
+    color:red;
+}
+
+Pobieramy element który chcemy stylować, potem nadajemy mu jakąś wartość w tym przypadku kolor tekstu na czerwony.
+
+Jak korzystać z CSS?
+
+Możemy używać styli w naszym pliku html w danym elemencie za pomocą atrybutu style. (Nie zalecane)
+Możemy używać styli w naszym pliku html w elemencie head uzywajac tagu style. (Lepsze niż wcześniejsze ale nie zalecane)
+Możemy używać styli w osobnym pliku i podłączyć go do naszego pliku HTML. (Zalecane) - podłączamy za pomocą tagu link w head.
+
+CSS wartości
+
+font-size: Wielkość czcionki..
+color: Kolor..
+font-family: Rodzaj czcionki..
+text-transform: Transformacja tekstu, wielkie litery, małe..
+font-style: Styl czcionki, pochylona..
+line-height: Wielkość linii..
+text-align: Centrowanie tekstu do środka/lewej/prawej..
