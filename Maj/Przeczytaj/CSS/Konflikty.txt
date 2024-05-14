@@ -1,0 +1,34 @@
+Temat: Konflikty
+
+W CSS występuje zjawisko konfliktów styli pomiędzy elementami.
+Często gęsto używamy kilku styli dla jednego elementu, ale style piszemy w różnych selektorach.
+
+h1 {
+    color:red;
+}
+
+.heading-1 {
+    color:blue;
+}
+
+Odwołują się do tego samego elementu i mają te same własciwości, więc powstaje konflikt.
+
+Jak rozwiązuje się konflikty?
+
+Konflikty są rozwiązywane za pomocą techniki medalowej. Po najechaniu na nasz selektor wskaże się taki opis (0,0,0).
+Opis oznacza złoty|srebrny|brązowy medal.
+
+Zasada : 1 złoty jest więcej wart niż 100 srebrnych, 1 srebrny jest więcej wart niż 100 brązowych.
+
+Stylowanie po różnych selektorach ma różne wartości medalowe, stylujemy po ID? Ma wartość złotą.
+Po klasie? Wartośc srebrną, po elemencie (h1) wartość brązową.
+
+Na tej bazie potem CSS sprawdza który selektor ma największą ilość medali i jakiego typu, ten z najwyzszym wygrywa i jego style są używane.
+
+Co jak są takie same selektory z tą samą wagą medalową?
+
+Wtedy ten który jest ostatni w kolejności, tego style są przejmowane.
+
+Stylowanie elementów liniowo w HTML ma najwyższy status medalowy, style są od razu brane z tego stylowania.
+
+Możemy złamać zasade medalową używajac słówka !important, ale nie jest to zalecane.

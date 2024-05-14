@@ -1,0 +1,21 @@
+Temat: Dziedziczenie
+
+W CSS mamy też mechanizm dziedziczenia styli z rodzica. Nie wszystkie style są dziedziczone.
+
+Przykład 
+
+<div>
+<p>Cosiek</p>
+</div>
+
+div {
+    font-size:20px;
+    border-top:5px solid black;
+}
+
+I tutaj dochodzi do dziedziczenia styli i paragraf będzie miał wielkość czcionki 20px,
+ale border nie jest właściwością dziedziczącą więc tego nie będzie dziedziczył.
+Pozwala nam to tworzyć dużo lepsze style, możemy wrzucać coś dla body i każdy element to będzie miał.
+
+Mamy też selektor * który oznacza "dla kązdego elementu jaki istnieje" ma on najniższą wartość medalową więc łatwo go nadpisać.
+Możemy w nim ustawić style dla każdego elementu.

@@ -1,5 +1,11 @@
 /* GŁÓWNE ELEMENTY */
 
+body {
+  font-family: sans-serif;
+  color: #444;
+  border-top: 10px solid #1098ad;
+}
+
 .primary-header {
   background-color: #f7f7f7;
 }
@@ -11,15 +17,6 @@
 }
 
 /* ELEMENTY TEKSTU */
-h1,
-h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
-  color: #444;
-}
 
 h1 {
   font-size: 26px;
