@@ -1,0 +1,17 @@
+Temat: HyperLinks
+
+HyperLinks - czytaj linki do stron zewnętrznych/źródeł na stronie.
+Opisałem dużo wcześniej na temat linków, tutaj zajmiemy się stylowaniem.
+Dlaczego to opisuje? Linki stylujemy właśnie po pseudoklasach, nie stylujemy ich np tak..
+a,.link
+
+Korzystamy tutaj z techniki LVHA.
+
+Link,Visited,Hover,Active
+
+Czyli -> .link:link,.link:visited,.link:hover,.link:active.
+
+Gdzie hover i active są to akcje które zrobią coś po najechaniu na link, po kliknięciu.
+Możemy wtedy jakoś inaczej stylować nasze linki.
+
+Dlaczego stylujemy po :link? Żebyśmy mieli pewność, że link który mamy zawsze ma atrybut href.

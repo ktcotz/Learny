@@ -56,6 +56,20 @@ li {
   font-size: 20px;
 }
 
+li:first-child {
+  font-weight: 700;
+}
+
+a:link,
+a:visited {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
 .copyright {
   font-size: 16px;
 }

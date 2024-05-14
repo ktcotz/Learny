@@ -1,0 +1,14 @@
+Temat: Pseudoklasy
+
+Pseudoklasy zaczynaja się od użycia : w selektorze.
+Pozwalają nam nie ingerować klasami w elementy HTML które mogą być zmienne, ale obliczać je na podstawie struktury.
+Chcemy 1 element listy? Pseudoklasa, zawsze sie 1 element może zmienić..
+
+Jak to wygląda?
+
+li:first-child{}
+
+Mamy też dostęp do pseudoklas nth-child,nth-of-type,nth-last-of-type,nth-last-child, które pozwalają wybrać elementy zgodnie z tym co podamy w funkcji.
+
+li:nth-child(even) - pobierze elementy które są parzyste.
+li:nth-child(1) - pobierze 1 dziecko
