@@ -1,0 +1,18 @@
+Temat: IdClass
+
+ID - identyfikatory.
+Class - klasy.
+
+Bardzo potrzebne rzeczy w tworzeniu kodu CSS, każdy element który chcemy stylować powinniśmy stylować po klasie/id, nigdy po głównym elemencie.
+
+h1{} (Nie zalecane)
+.heading1 (Zalecane)
+#heading1 (Zalecane z UWAGĄ!)
+
+Do uwagi!! Jeżeli stylujemy po id, poprawność HTML obowiązuje posiadanie jednego ID dla całego pliku. Nie możemy stylować kilku elementów tym samym id. Od tego są już klasy.
+
+<p id="cos"></p>
+<header id="cos"></header>
+(Nie zalecane)
+
+Wszystko co stylujemy powinniśmy stylować po klasach.

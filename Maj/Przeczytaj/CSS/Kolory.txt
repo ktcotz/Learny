@@ -1,0 +1,21 @@
+Temat: Kolory
+
+Kolory reprezentowane są w formacie RGB(red,green,blue). (Jest to najczęstszy sposób prezentowania kolorów)
+Aby uzyskać dany kolor musimy oznaczyc jego nasycenie z liczb 0-255 gdzie 255 to największa możliwość.
+
+rgb(255,0,0) wskaże nam kolor czerwony bo największe nasycenie jest w strefie czerwonej.
+
+rgb(255,255,255) - biały
+rgb(0,0,0) - czarny
+
+RGB udostępnia też kolor "alpha" czyli trasnaprentość koloru, przezroczystoć.
+
+rgba(0,0,0,.5) - czarny z 50% przezroczystością.
+
+!! WAŻNE kolory w CSS możemy łatwo uzyskiwać z wbudownaego kolor pickera, odsyłam po więcej informacji do internetu. 
+
+Oprócz RGB możemy też przedstawiać kolory w postaci hexadecimal.
+
+#ffffff - biały gdzie ff oznacza 255 w rgb.
+#000000 - czarny gdzie 00 oznacza 00 w rgb.
+

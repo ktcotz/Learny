@@ -26,3 +26,10 @@ text-transform: Transformacja tekstu, wielkie litery, małe..
 font-style: Styl czcionki, pochylona..
 line-height: Wielkość linii..
 text-align: Centrowanie tekstu do środka/lewej/prawej..
+
+CSS umożliwia tworzenie styli dla kilku elementów.
+Zamiast pisać p {} h1 {} li {}, możemy je po prostu wymienić.
+
+p,h1,li{
+    color:red;
+}

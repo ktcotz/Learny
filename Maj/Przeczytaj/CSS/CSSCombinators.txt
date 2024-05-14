@@ -1,0 +1,36 @@
+Temat: CSSCombinators
+
+Combinators określają relacje pomiędzy selektorami.
+Istnieją 4 główne combinatory:
+
+1. Descendant selector (space)
+2. Child selector (>)
+3. Adjacent sibling selector (+)
+4. General sibling selector (~)
+
+1. Opisuje wszystkie elementy w danym elemencie.
+
+header p - wszystkie paragrafy w headerze.
+
+2. Opisuje wszystkie dzieci w danym elemencie.
+
+header > p - wszystkie paragrafy które są dziećmi headera.
+
+3. Opisuje kolejny element, brata danego elementu.
+
+header+p - paragraf który jest kolejnym bratem headera.
+
+<div>
+    <header></header>
+    <p></p>
+</div>
+
+4. Opisuje kolejny element, który jest po elemencie.
+
+header~p - paragraf który jest którymś bratem po elemencie.
+
+<div>
+    <header></header>
+    <div></div>
+    <p></p>
+</div>
