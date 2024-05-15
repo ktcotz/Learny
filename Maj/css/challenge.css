@@ -1,0 +1,57 @@
+body {
+  font-family: sans-serif;
+}
+
+.article {
+  border: 4px solid #000;
+}
+
+.article-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 22px;
+  background-color: #f7f7f7;
+}
+
+.article-price {
+  font-size: 24px;
+}
+
+.article-type {
+  color: #777;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.link:link,
+.link:visited {
+  color: #000;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.article-list {
+  list-style-type: square;
+}
+
+.article-list-title {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.btn {
+  text-transform: uppercase;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #fff;
+}

@@ -1,0 +1,21 @@
+Temat: BoxModel
+
+Każdy element w CSS posiada swój własny box model.
+Box model określa zależność wielkości i szerokości elementu, określa też odległość między innymi elementami.
+
+Co wchodzi w skład box modelu?
+- Width (szerokość)
+- Height (wielkość)
+- Content (kontent)
+- Padding (wielkość wewnątrz elementu)
+- Margin (wielkość pomiędzy elementami)
+- Border (obramowanie)
+
+Box Model bardzo łatwo zobaczyć w DevTools.
+
+Dokładna szerokość elementu - Border Left+Padding Left+Width+Padding Right + Border Right
+Dokładna wysokość elementu - Border Top+Padding Top+Height+Padding Bottom + Border Bottom
+
+Zachowanie możemy zmienić uwzględniając właściwość box-sizing.
+
+Jeżeli ustwaimy na border-box to wtedy określona szerokość będzie równa temu co określiliśmy. Normalnie nie jest sztywna, w momencie dodania paddingu od razu się szerokość powiększa.

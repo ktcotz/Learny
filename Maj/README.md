@@ -8,3 +8,11 @@ Sprawdzenie informacji na temat tego jak wykorzystywać aktualnie AI(ChatGPT) w 
 ## 13.05.2024
 
 Pierwszy dzień nauki, na początek nauka HTML&CSS. Start nauki za pośrednictwem kursu Jonassa Schmedtmanna.
+
+## 14.05.2024
+
+Drugi dzień nauki, nauka HTML&CSS. Uczenie się na solidnych podstawach, opisywanie z przykładami dla innych developerów jako pomoc naukowa.
+
+## 15.05.2024
+
+Trzeci dzień nauki, nauka HTML&CSS. Na początek dnia świetny artykuł na temat pikseli/remów/emów, opisałem po co są, jak się je oblicza, kiedy używać, wszystkie za i przeciw. W dalszym ciągu nauka bazując na kursie Jonassa.
