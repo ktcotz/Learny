@@ -1,0 +1,40 @@
+Temat: PixelsAccesibility
+
+Główny temat dotyczy pixels or ems/rems.
+
+!!Co to em/rems?
+
+Są to wartości relatywne które możęmy uzywać aby określać wielkości czcionki i wszysdtkie odległości w CSS.
+Em odwołują się do relacji rodzica, rem odwołują się do root elementu (HTML). Na tej podstawie dynamicznie obliczane są wartości.
+
+<div>
+<p></p>
+</div>
+
+div {
+    font-size:16px;
+}
+
+p {
+    font-size:1.5em; <- 24 px;
+    font-size:1.5rem <- 24px; (odwołuje się do root elementu).
+}
+
+Ale jeżeli ustawimy inny root size
+
+html {
+    font-size:20px;
+}
+
+To w momencie użycia 1.5rem będzie wskazywać 20*1.5 = 30px.
+
+Remy są bardzo opłacalne jeżeli chcemy tworzyć "fluid layouts", za pomocą jednej zmiany jesteśmy w stanie zmienić praktycznie wszystkie wielkości na stronie.
+
+!!Kiedy i gdzie stosować piksele/emy/remy?
+
+W myśl zasady, chcesz żeby wartość się skalowała? Użyj rem, nie chcesz? Użyj pikseli.
+Typografia zazwyczaj będzie tworzona z użyciem remów, tak samo szerokość elementu jeżeli chcemy aby się skalowała.
+
+!!! WAŻNE !!!
+
+Nie używaj deklaracji font-size:62.5%, nie jest to zalecana praktyka. Ułatwia liczenie remów na piksele ale blokuje accesibility i możliwości bibliotek trzecich.
