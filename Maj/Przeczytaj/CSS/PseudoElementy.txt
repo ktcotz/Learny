@@ -1,0 +1,9 @@
+Temat: PseudoElementy
+
+Pseudoelementy - selektor::pseudo-element. (składnia)
+
+Pozwala tworzyć dodatkowe elementy w kontenerze nie ingerując w HTML.
+Często przydatne do tworzenia jakiegoś dodatkowego efektu.
+Najczęściej używanymi pseudoelementami sa elementy before i after.
+W momencie użycia musimy zadeklarować własciwość content bo bez niego nie powstaną.
+Elementy są elementami liniowymi!
