@@ -16,3 +16,7 @@ Drugi dzień nauki, nauka HTML&CSS. Uczenie się na solidnych podstawach, opisyw
 ## 15.05.2024
 
 Trzeci dzień nauki, nauka HTML&CSS. Na początek dnia świetny artykuł na temat pikseli/remów/emów, opisałem po co są, jak się je oblicza, kiedy używać, wszystkie za i przeciw. W dalszym ciągu nauka bazując na kursie Jonassa.
+
+## 16.05.2024
+
+Czwarty dzień nauki, rozpoczęty od stworzenia zadania challengowego. Następnie nauka HTML&CSS, opisywanie typów elementów a także pozycjonowania, temat pseudoelementów, skończenie sekcji CSS w kursie Jonassa.

@@ -1,0 +1,26 @@
+Temat: Typy Elementów
+
+!!Co oznacza hasło typy elementów?
+
+W CSS rozróżniamy kilka zachowań elementów, takie które zostają w tej samej linii, takie które przechodzą do nowej linii.
+Dzieje się tak dlatego, że mają podane różne typy zachowania.
+
+Rozróżniamy kilka z nich:
+1. Blokowy (block)
+2. Liniowy (inline)
+3. Liniowy-blokowo. (inline-block)
+
+!!Opis każdego z typów.
+
+1. Blokowy
+
+Elementy blokowe układają się jeden za drugim, każdy kolejny przechodzi do nowej linii.
+Możemy na nich używać marginów,paddingów,szerokości,wysokości, całego box modelu.
+
+2. Liniowy
+
+Elementy liniowe zostają w tej samej linii. Na elementach liniwoych nie możemy wykorzystywać wszystkich zasad box modelu. Wykorzystać możemy tylko margin i padding ale tylko lewy i prawy.
+
+3. Liniowo-blokowy
+
+Połączenie dwóch poprzednich. Zostają w tej samej linii ale możemy wykorzystywać całość zasad box modelu.
