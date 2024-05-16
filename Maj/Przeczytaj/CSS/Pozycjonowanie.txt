@@ -1,0 +1,26 @@
+Temat: Pozycjonowanie
+
+Pozycjonowanie oznacza rozmieszczenie elementów na stronie w różnych pozycjach.
+Normalnie jest ustawione na "normal flow" czyli układają się elementy tak jak je zadeklarowaliśmy w HTML.
+W momencie jak są blokowe to od nowej linii a jak liniowe to w tej samej.
+Możemy używać pozycjonowania aby w jakiś sposób "wyciągnąć" ten element z tego flow i ustawić gzdieś na stronie.
+
+!!Typy pozycjonowania
+
+1.Absolute
+2.Relative
+3.Fixed
+4.Sticky
+
+!!Opis
+
+1. Absolutne pozycjonowanie oznacza wyciągnięcie z flow elementu i ustawienie go gdzieś na stronie, gdzie określimy.
+Możemy pozycjonować za pomocą własciwości top/right/left/bottom i ustawia się on do relatywnego rodzica.
+W momencie jak nie użyjemy pozycjonowania relatywnego na rodzicu, element będzie się układał na całym viewporcie.
+
+2. Relatywne pozycjonowanie oznacza, że elementy pozycjonowane absolutne, będą się pozycjonować względem tego elementu.
+Chodzi o dziecko, musi być zagnieżdżone w tym elemencie. Element nie jest wyciągany z flow, możemy na nim działać z wartościami top/left/right/bottom.
+
+3. Fixed jest podobne do absolute, ale w momencie scrollowania strony, element będzie podążał za nami.
+4. Sticky jest podobne do fixed, od jakiegoś momentu np po przeskrolowaniu elementu o wielkości 100vh, możemy zmienić styl np naszej nawigacji i nadać mu pozycjonowanie sticky.
+Zmienią się jego style i zachowanie, najlepiej to widać na przykładzie "sticky header" albo "sticky nav", wpisz w google. Zrobimy przykład później..
