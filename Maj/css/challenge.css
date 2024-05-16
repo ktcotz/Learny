@@ -9,10 +9,24 @@ body {
 }
 
 .article {
+  position: relative;
   width: 825px;
   margin: 50px auto;
 
   border: 4px solid #000;
+}
+
+.article::after {
+  position: absolute;
+  top: -17px;
+  left: -38px;
+  content: "SALE";
+  background-color: #ec2f2f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 15px;
+  letter-spacing: 2px;
 }
 
 .article-title {
@@ -38,7 +52,9 @@ body {
 
 .link:link,
 .link:visited {
+  display: inline-block;
   color: #000;
+  margin-bottom: 30px;
 }
 
 .link:hover {
@@ -80,4 +96,39 @@ body {
 .btn:hover {
   color: #000;
   background-color: #fff;
+}
+
+.color {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+.color:last-child {
+  margin-right: 0;
+}
+
+.color-black {
+  background-color: black;
+}
+
+.color-blue {
+  background-color: blue;
+}
+
+.color-red {
+  background-color: red;
+}
+
+.color-yellow {
+  background-color: yellow;
+}
+
+.color-green {
+  background-color: green;
+}
+
+.color-brown {
+  background-color: brown;
 }
