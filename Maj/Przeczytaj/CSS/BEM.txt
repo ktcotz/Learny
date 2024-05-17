@@ -1,0 +1,23 @@
+Temat: BEM
+
+BEM - Block,Element,Modifier.
+
+Irytuje Cie tworzenie klas w CSS, ciężka architektura i kod robi się zagmatwany?
+Skorzystaj z metodologii BEM. Jest to jedna z opcji nazywania klas w HTML&CSS.
+Opiera się na zasadzie Block->Element->Modifier.
+
+!!Co to oznacza?
+
+Block - osobny blok, komponent w którym są zagnieżdżone inne elementy, zazwyczaj jest on reużywalny na całej stronie. (header,content,accordion)
+
+Element - element w bloku, często posiada w sobie inne dzieci, ale jest on tworzony na podstawie bloku w którym jest zamieszczony. (header__box,content__box,accordion__title)
+
+Modifier - modyfikacja elementu,bloku, chcemy mieć różne wersje elementu? Dodaj modifier. (header--light, content__box--rectangle).
+
+Ważne! header__text__box <- nie prawidłowy kod BEM (header__text) <- poprawny.
+
+Czasami elementy mogą też być blokami. Mamy możliwość customizowania, nie ma jednej poprawnej drogi do osiągnięcia celu.
+
+!!Po co BEM?
+
+Szczególnie nadaje architekture naszemu kodu HTML&CSS. Mamy możliwość łatwego zintegrowania z innymi programistami, którzy wchodzą do projektu, albo z którymi dzielmi projekt, kod jest łatwo skalowalny i łatwo w nim o zmiany.
