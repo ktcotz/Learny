@@ -20,3 +20,7 @@ Trzeci dzień nauki, nauka HTML&CSS. Na początek dnia świetny artykuł na tema
 ## 16.05.2024
 
 Czwarty dzień nauki, rozpoczęty od stworzenia zadania challengowego. Następnie nauka HTML&CSS, opisywanie typów elementów a także pozycjonowania, temat pseudoelementów, skończenie sekcji CSS w kursie Jonassa.
+
+## 17.05.2024
+
+Piąty dzień nauki, opisanie na czym polega metodologia BEM bazując na praktycznym przykładzie.
