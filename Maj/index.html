@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="content">
-      <header class="primary-header">
+      <header class="primary-header clearfix">
         <h1>📘 The Code Magazine</h1>
         <nav>
           <a href="./blog.html">Blog</a>
@@ -17,18 +17,21 @@
           <a href="./css-grid.html">CSS Grid</a>
         </nav>
       </header>
-      <main>
-        <article>
+      <main class="clearfix">
+        <article class="art">
           <header class="post-header">
             <h2 class="special">The Basic Language of the Web: HTML</h2>
-            <img
-              src="./course/laura-jones.jpg"
-              alt="Headshot of Laura Jones"
-              width="50"
-            />
-            <p class="author">
-              Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
-            </p>
+            <div class="clearfix">
+              <img
+                src="./course/laura-jones.jpg"
+                alt="Headshot of Laura Jones"
+                width="50"
+                class="author-image"
+              />
+              <p class="author">
+                Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+              </p>
+            </div>
             <img
               src="./course/post-img.jpg"
               alt="Coding screen"

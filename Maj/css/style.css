@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,12 +14,11 @@ body {
 }
 
 .content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .primary-header {
-  min-height: 80px;
   padding: 20px 40px;
   margin-bottom: 60px;
   background-color: #f7f7f7;
@@ -166,4 +166,40 @@ nav a:link:last-child {
   font-size: 16px;
   font-weight: 700;
   padding: 5px 10px;
+}
+
+.author-image {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.art {
+  float: left;
+  width: 825px;
+  margin-right: 75px;
+}
+
+.related {
+  float: left;
+  width: 300px;
 }

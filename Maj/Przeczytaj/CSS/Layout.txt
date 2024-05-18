@@ -1,0 +1,25 @@
+Temat: Layout
+
+Layout - tworzenie komponentów, układu strony w jakiś sposób, obok siebie lub w jakieś innej kolejności.
+
+!!Sposoby na tworzenie layoutów.
+
+1. Float - pływaki
+
+Najstarszy sposób którym możemy budować layouty. (W ogóle nie zalecany)
+Jedna z osób powie, że się nie opłaca tego uczyć, druga powie, że warto znać, ja tylko opisze.
+Działa podobnie do pozycjonowania absolutnie, ale tekst,elementy opływają ten element.
+
+Musisz pamiętać, że w momencie posiadania przez wszystkie dzieci floatów, to rodzic traci swoją wielkość i wskazuje na 0. Potrzebny wtedy jest trik o nazwie "clearfix" czyli wyczyszczenie floatów.
+
+2. Flexbox
+
+Flexbox jest idealny do tworzenia w sposób jednowymiarowy (w kolumnie, w wierszu).
+Nie mam co dużo opisywać, najlepiej sprawdzić jakiś film na internecie.
+Głównie polega to na tym, że bardzo łatwo zarządza się elementami w kontenerze o ile ma wolne miejsce.
+
+3. CSS Grid
+
+Grid jest idealny do tworzenia w sposób dwuwymiarowy, możemy działac zarówno na kolumnach jak i wierszach. Najprościej porównać to do tworzenia siatek, możęmy używać kolumn i wierszy. 
+
+Flexbox i CSS grid są najlepszymi możliwościami na tą chwilę. Warto też zwrócic uwagę na 2 gry, Flexbox Froggy i CSS Garden.
