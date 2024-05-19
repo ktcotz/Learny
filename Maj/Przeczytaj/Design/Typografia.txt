@@ -1,0 +1,24 @@
+Temat: Typografia
+
+Typografia odwołuje się do wszystkich aspektów dotyczących tekstu, najważniejsze żeby był czytelny i łatwy do czytania.
+
+!!Rodzaje czcionek
+
+Istnieją czcionki szeryfowe i bezszeryfowe.
+Różnią się one tym, że szeryfowe czcionki mają charakterystyczne zakończenia na końcach liter.
+
+!!Zasady dobrej typografii
+
+1. Używaj popularnych krojów czcionek. Tych które są najczęściej używane i są najwyżej punktowane.
+(Inter,Roboto,Open Sans,Merriweather,Aleo,...)
+
+2. Używaj jednego kroju czcionki na stronę, zmaksymalizuj do 2 jeżeli chcesz dodatkowy.
+
+3. Wybierz poprawny krój dla poprawności twojej strony. (Szeryfowy dla strony poważnej...).
+
+4. Dla wielkości czcionek dobrze użyć narzędzia typescale, chyba, że korzystasz z tailwinda który ma wbudowany system wielkości.
+
+5. Używaj grubości czcionek pomiędzy 400-900.
+
+6. Maksymalnie do 75 znaków na linię (Tak aby tekst był łatwy do przeczytania, nie był za długi na wielkości).
+
