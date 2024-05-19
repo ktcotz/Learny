@@ -24,3 +24,7 @@ Czwarty dzień nauki, rozpoczęty od stworzenia zadania challengowego. Następni
 ## 17.05.2024
 
 Piąty dzień nauki, opisanie na czym polega metodologia BEM bazując na praktycznym przykładzie.
+
+## 18.05.2024
+
+Szósty dzień nauki, praca nad layoutami, zabawa z grami Flexbox Froggy i CSS Grid garden. Oglądanie filmików aby jak najszybciej i najlepiej zrozumieć flexa i grida.
