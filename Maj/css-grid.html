@@ -15,11 +15,15 @@
       .el--3 {
         background-color: green;
         height: 150px;
+        /* grid-column: 1/2;
+        grid-row: 1; */
       }
       .el--4 {
         background-color: goldenrod;
       }
       .el--5 {
+        align-self: center;
+        justify-self: end;
         background-color: palevioletred;
       }
       .el--6 {
@@ -40,6 +44,12 @@
         margin: 40px;
 
         /* CSS GRID */
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        column-gap: 20px;
+        row-gap: 40px;
       }
 
       .container--2 {
@@ -47,12 +57,18 @@
         font-family: sans-serif;
         background-color: black;
         font-size: 40px;
-        margin: 100px;
+        margin: 40px;
 
-        width: 1000px;
+        width: 700px;
         height: 600px;
 
         /* CSS GRID */
+
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 50px 150px;
+
+        place-content: center;
       }
     </style>
   </head>
