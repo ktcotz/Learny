@@ -1,0 +1,13 @@
+Temat: Shadows
+
+Cienie dodają nam efektu "wyciągania" elementu z strony. Coś na wzór unoszenia się elementu.
+
+!!Zasady
+
+1. Cienie używaj jeżeli mają sens dla designu twojej strony. Im strona "zabawniejsza" tym więcej cieni będzie użytych.
+
+2. Używaj cieni na elementach które tego mogą oczekiwać, nie na każdym elemencie jaki istnieje.
+
+3. Używaj jasnych cieni, nie ciemnych, skorzystaj z tego co używa tailwindCSS, mają świetny sposób tworzenia cieni.
+
+4. Cieni używa się zasadniczo do elementów które chcielibyśmy aby przykuły uwagę użytkownika.
