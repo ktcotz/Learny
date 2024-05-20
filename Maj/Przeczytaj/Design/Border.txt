@@ -1,0 +1,7 @@
+Temat: Border Radius
+
+!!Zasady
+
+1. Tak jak w każdym, zależy to od tego jaki styl ma nasza strona. Jeżeli bardziej zabawna to tym więcej border radius, jeżeli poważna tym mniej.
+
+2. Często typografia ma swoje krągłości które możemy zsynchronizować z border radiusem.
