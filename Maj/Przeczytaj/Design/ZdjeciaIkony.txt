@@ -1,0 +1,23 @@
+Temat: Zdjęcia i Ikony.
+
+!!Zasady zdjęcia
+
+1. Zdjęcia nadają większej głębi twojego produktu. Korzystaj z nich w dużej ilości, ale pamiętaj, że zdjęcia muszą być dostosowane pod twoją treść, aby się uzupełniało,
+inaczej wprowadzi to użytkownika w zakłopotanie.
+
+2. Używaj oryginalnych zdjęć, najlepiej profesjonalnych, jeżeli nie ma takiej możliwości, używaj zdjęć które udostępniają osoby za darmo.
+(Unsplash,drawkit)
+
+3. Przygotuj zdjęcia na różne wielkości viewportu, nie chcemy używać zdjęcia 3000x1500 na urządzeniu mobilnym.
+
+!! Zasady ikon
+
+1. Używaj jednego rodzaju ikon, nie mieszaj ze sobą wielu paczek.
+(ionicons,font awesome).
+Możesz czasami używać emoji zamiast ikon.
+
+2. Ikon używaj tylko w formacie svg, łatwo skalowalnym.
+
+3. Dostosuj ikony do personalii swojej strony.
+
+4. Często używaj ikon do dodania wizualnej pomocy dla tekstu, dla różnych zachowań na stronie.
