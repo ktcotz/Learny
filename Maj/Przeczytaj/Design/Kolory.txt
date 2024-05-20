@@ -1,0 +1,22 @@
+Temat: Kolory
+
+Kolory opisywałem już w jednym z plików, ale tutaj dodamy tylko to co należy do designu.
+
+Każdy kolor ma jakąś symbolizację, ważne, żeby dobrać odpowiednie kolory do personalii twojej strony.
+(Zielony -> natura). Kolory odzwierciedlają znaczenie strony.
+
+!!Zasady
+
+1. Używaj dobrej tonacji kolorów, skorzystaj z palety kolorów. Wygeneruj "shades and tints" dla głównego koloru.
+(Open Color, Shades and tints generator).
+
+2. Do głównego koloru wybierz kolor "gray" który zazwyczaj oznacza secondary color. Zazwyczaj jest on używany do tekstu. Jeżeli jesteś bardziej zaawansowany, możesz dodać więcej kolorów, ale im więcej tym ciężej wszystko współgrać. (Zalecane 3 kolory, main, accent, gray).
+
+3. Używaj głównego koloru aby zaznaczyć najważniejsze informacje na stronie.
+
+4. Dobrym pomysłem jest używanie koloru tekstu o jaśniejszej wersji na sekcji której background ma kolor w ciemniejszej wersji.
+
+5. Text nigdy nie powinien być kompletnie czarny.
+
+6. Zawsze pamiętaj aby sprawdzić kontrast swoich kolorów.
+(Bardzo ważne!)
