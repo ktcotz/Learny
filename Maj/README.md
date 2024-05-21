@@ -28,3 +28,12 @@ Piąty dzień nauki, opisanie na czym polega metodologia BEM bazując na praktyc
 ## 18.05.2024
 
 Szósty dzień nauki, praca nad layoutami, zabawa z grami Flexbox Froggy i CSS Grid garden. Oglądanie filmików aby jak najszybciej i najlepiej zrozumieć flexa i grida.
+
+## 19.05.2024
+
+## 20.05.2024
+
+## 21.05.2024
+
+Kilka kolejnych dni nauki, praca z designem, pogłębianie wiedzy na temat HTML&CSS.
+Praca nad samodzielnym projektem.
