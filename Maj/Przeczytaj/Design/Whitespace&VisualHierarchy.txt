@@ -1,0 +1,13 @@
+Temat: Whitespace & Visual Hierarchy.
+
+Whitespace - biała przestrzeń, jest to przestrzeń pomiędzy elementami,sekcjami.
+Zazwyczaj stworzona przez margin/padding. Pozwala lepiej zorganizować i ustrukturyzować nasz kontent. Pozwala też naszemu designowi "oddychać".
+Elementy które są sobie odpowiednie, tytuł + tekst, powinny być bliżej siebie.
+
+Dobrym sposobem jest użycie dużej ilości whitespace i w razie skorygowania to zmniejszając go.
+
+Visual Hierarchy - jest to łączenie elementów które są sobie odpowiednie albo mają zwiększyć uwagę użytkownika. Jest to swojego rodzaju ścieżka dla użytkownika w które miejsca patrzeć i podążac zwrokiem.
+
+!!Zasady
+
+1. Pozycjonuj najważniejsze elementy najbliżej góry strony. Użytkownik czyta od góry do dołu.
