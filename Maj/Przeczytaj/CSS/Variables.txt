@@ -1,0 +1,25 @@
+Temat: Variables
+
+CSS udostępnia możliwość tworzenia zmiennych którymi możemy obsługiwać style które używamy w całym programie, kolory itp..
+
+Konstrukcja -> --ZMIENNA:COS CO CHCEMY PRZYPISAC.
+
+--color-primary:red;
+
+Zmienne globalne najlepiej tworzyć w zakresie :root{} który okresla element html.
+
+Zmienne możemy też tworzyć lokalnie w elementach, dzieci będą je mogły odziedziczyć co pozwala tworzyć zaawansowane style CSS.
+
+.parent{
+    --background:red
+}
+
+.child {
+    MOŻE UŻYWAĆ --background.
+}
+
+Żeby użyć zmiennej odwołujemy się w sposób..
+
+.child {
+    background-color:var(--background)
+}

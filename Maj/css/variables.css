@@ -1,0 +1,21 @@
+:root {
+  --background: #088f5b;
+  --danger: red;
+  --normal: blue;
+}
+
+.main {
+  background-color: var(--background);
+}
+
+button {
+  background-color: var(--background-button);
+}
+
+.btn--normal {
+  --background-button: var(--normal);
+}
+
+.btn--danger {
+  --background-button: var(--danger);
+}
