@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  color: #444;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  min-height: 100vh;
+  position: relative;
+  background-image: linear-gradient(
+      to right,
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url("./../course/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.header__text-box {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header__text-box-inner {
+  width: 50%;
+}
+
+.nav {
+  font-size: 20px;
+  font-weight: 700;
+
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-size: 52px;
+  margin-bottom: 32px;
+  line-height: 1.05;
+}
+
+.text {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+h2 {
+  font-size: 44px;
+  margin-bottom: 48px;
+}
+
+section {
+  padding: 96px 0;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link--hero:link,
+.link--hero:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #e67e22;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
