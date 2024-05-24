@@ -37,3 +37,11 @@ Szósty dzień nauki, praca nad layoutami, zabawa z grami Flexbox Froggy i CSS G
 
 Kilka kolejnych dni nauki, praca z designem, pogłębianie wiedzy na temat HTML&CSS.
 Praca nad samodzielnym projektem.
+
+## 22.05.2024
+
+## 23.05.2024
+
+## 24.05.2024
+
+Praca nad komponentami, poszerzanie wiedzy na tematy np CSS variables. Ostatniego dnia 24, początek pracy nad finalnym projektem Omnifood.
