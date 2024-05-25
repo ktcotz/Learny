@@ -1,0 +1,43 @@
+.heading__primary {
+  font-size: 3.25rem;
+  line-height: 1.05;
+  color: var(--color-heading-color);
+  letter-spacing: -0.5px;
+  margin-bottom: 2rem;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link--general:link,
+.link--general:visited {
+
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  color: var(--color-neutral);
+  border-radius: 9px;
+  transition: var(--transition-duration);
+}
+
+.link--primary:link,
+.link--primary:visited {
+  background-color: var(--color-primary);
+}
+
+.link--primary:hover {
+  background-color: var(--color-primary-shade);
+}
+
+.link--secondary:link,
+.link--secondary:visited {
+  background-color: var(--color-neutral);
+  color: var(--color-text);
+}
+
+.link--secondary:hover {
+  box-shadow: 0 0 0 3px var(--color-neutral) inset;
+  background-color: var(--color-primary-tint);
+}
