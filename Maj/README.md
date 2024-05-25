@@ -45,3 +45,7 @@ Praca nad samodzielnym projektem.
 ## 24.05.2024
 
 Praca nad komponentami, poszerzanie wiedzy na tematy np CSS variables. Ostatniego dnia 24, początek pracy nad finalnym projektem Omnifood.
+
+## 25.05.2024
+
+Praca nad finalnym projektem. W projekcie używam wszystkiego co się do tej pory nauczyłem, zmienne, podejście designowe..
