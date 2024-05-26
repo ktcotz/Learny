@@ -97,6 +97,35 @@
   color: var(--color-primary-shade);
 }
 
+/* FEATURED */
+
+.section-featured {
+  padding: 3rem 0 2rem 0;
+}
+
+.featured__title {
+  --local-color: #999;
+  font-size: 0.875rem;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--local-color);
+}
+
+.featured__companies {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.featured__company {
+  height: 2rem;
+  filter: brightness(0);
+  opacity: 50%;
+}
+
 /* HOW */
 
 .section-how {
