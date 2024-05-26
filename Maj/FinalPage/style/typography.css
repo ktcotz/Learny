@@ -86,3 +86,16 @@
   padding: 0.75rem 1.5rem;
   border-radius: 9px;
 }
+
+.link--meals:link,
+.link--meals:visited {
+  color: var(--color-primary);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all var(--transition-duration);
+}
+
+.link--meals:hover {
+  color: var(--color-primary-shade);
+  border-bottom-color: transparent;
+}
