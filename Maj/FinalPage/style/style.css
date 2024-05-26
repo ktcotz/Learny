@@ -1,9 +1,11 @@
 :root {
   --color-text: #555;
+  --color-text-tint: #ddd;
   --color-neutral: #fff;
   --color-heading-color: #333;
   --color-primary: #e67e22;
   --color-primary-shade: #cf711f;
+  --color-primary-tint-medium: #fae5d3;
   --color-primary-tint: #fdf2e9;
   --primary-font-family: "Rubik", sans-serif;
 
@@ -11,7 +13,7 @@
 }
 
 .wrapper {
-  --width: 71.25rem;
+  --width: 75rem;
   max-width: var(--width);
   margin: 0 auto;
   padding: 0 2rem;
@@ -95,6 +97,60 @@
   color: var(--color-primary-shade);
 }
 
+/* HOW */
+
+.section-how {
+  padding: 6rem 0;
+}
+
+.how__step {
+  font-size: 5.375rem;
+  font-weight: 600;
+  color: var(--color-text-tint);
+  margin-bottom: 0.75rem;
+}
+
+.how__image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how__image-container::after,
+.how__image-container::before {
+  --size: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: var(--size);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--color-primary-tint);
+}
+
+.how__image-container::before {
+  --size: 60%;
+  z-index: -2;
+}
+
+.how__image-container::after {
+  --size: 45%;
+  z-index: -1;
+  background-color: var(--color-primary-tint-medium);
+}
+
+.how__image {
+  width: 35%;
+}
+
+.how__description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
 /* GLOBAL */
 
 .list {
@@ -102,4 +158,26 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+.grid {
+  display: grid;
+  row-gap: 6rem;
+  column-gap: 4rem;
+}
+
+.grid-center {
+  align-items: center;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
 }

@@ -6,6 +6,32 @@
   margin-bottom: 2rem;
 }
 
+.heading__secondary {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  color: var(--color-heading-color);
+  letter-spacing: -0.5px;
+  margin-bottom: 6rem;
+}
+
+.heading__tertiary {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  color: var(--color-heading-color);
+  letter-spacing: -0.5px;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-primary-shade);
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  margin-bottom: 1rem;
+}
+
 .link:link,
 .link:visited {
   display: inline-block;
