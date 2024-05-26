@@ -4,39 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omnifood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/typography.css" />
+    <link rel="stylesheet" href="./style/utilities.css" />
   </head>
   <body>
-    <section class="section-hero">
-      <div class="hero wrapper wrapper--hero">
-        <div class="hero__content">
-          <h1 class="heading__primary">
-            A healthy meal delivered to your door, every single day
-          </h1>
-          <p class="hero__description">
-            The smart 365-days-per-year food subscription that will make you eat
-            healthy again. Tailored to your personal tastes and nutritional
-            needs. We have delivered 250,000+ meals last year!
-          </p>
-          <div class="hero__links">
-            <a href="#" class="link link--general link--primary">
-              Start eating well
+    <header class="header">
+      <a href="#" class="logo">
+        <img
+          src="./content/img/omnifood-logo.png"
+          alt="Omnifood"
+          class="logo__image"
+        />
+      </a>
+      <nav class="navigation">
+        <ul class="list">
+          <li class="list__item">
+            <a href="#" class="link link--navigation"> How it works </a>
+          </li>
+          <li class="list__item">
+            <a href="#" class="link link--navigation"> Meals </a>
+          </li>
+          <li class="list__item">
+            <a href="#" class="link link--navigation"> Testimonials </a>
+          </li>
+          <li class="list__item">
+            <a href="#" class="link link--navigation"> Pricing </a>
+          </li>
+          <li class="list__item">
+            <a href="#" class="link link--navigation link--primary link--cta">
+              Try for free
             </a>
-            <a href="#" class="link link--general link--secondary">
-              Learn more &darr;
-            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="section-hero">
+        <div class="hero wrapper wrapper--hero">
+          <div class="hero__content">
+            <h1 class="heading__primary">
+              A healthy meal delivered to your door, every single day
+            </h1>
+            <p class="hero__description">
+              The smart 365-days-per-year food subscription that will make you
+              eat healthy again. Tailored to your personal tastes and
+              nutritional needs. We have delivered 250,000+ meals last year!
+            </p>
+            <div class="hero__links">
+              <a href="#" class="link link--general link--primary">
+                Start eating well
+              </a>
+              <a href="#" class="link link--general link--secondary">
+                Learn more &darr;
+              </a>
+            </div>
+            <div class="customers">
+              <div class="customers__photos">
+                <img
+                  src="./content/img/customers/customer-1.jpg"
+                  alt="Omnifood Customer"
+                  class="customers__photo"
+                />
+                <img
+                  src="./content/img/customers/customer-2.jpg"
+                  alt="Omnifood Customer"
+                  class="customers__photo"
+                />
+                <img
+                  src="./content/img/customers/customer-3.jpg"
+                  alt="Omnifood Customer"
+                  class="customers__photo"
+                />
+                <img
+                  src="./content/img/customers/customer-4.jpg"
+                  alt="Omnifood Customer"
+                  class="customers__photo"
+                />
+                <img
+                  src="./content/img/customers/customer-5.jpg"
+                  alt="Omnifood Customer"
+                  class="customers__photo"
+                />
+                <img
+                  src="./content/img/customers/customer-6.jpg"
+                  alt="Omnifood Customer"
+                  class="customers__photo"
+                />
+              </div>
+              <p class="customers__title">
+                <strong class="customers__count"> 250,000+ </strong>
+                meals delivered last year!
+              </p>
+            </div>
+          </div>
+          <div class="hero__image-container">
+            <img
+              src="./content/img/hero.png"
+              alt="Woman enjoying food, meals in storage container, and food bowls on a table."
+              class="hero__image"
+            />
           </div>
         </div>
-        <div class="hero__image-container">
-          <img
-            src="./content/img/hero.png"
-            alt="Woman enjoying food, meals in storage container, and food bowls on a table."
-            class="hero__image"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+      <section class="how"></section>
+    </main>
   </body>
 </html>

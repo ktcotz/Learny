@@ -14,7 +14,7 @@
 
 .link--general:link,
 .link--general:visited {
-
+  font-weight: 600;
   padding: 1rem 2rem;
   font-size: 1.25rem;
   color: var(--color-neutral);
@@ -40,4 +40,23 @@
 .link--secondary:hover {
   box-shadow: 0 0 0 3px var(--color-neutral) inset;
   background-color: var(--color-primary-tint);
+}
+
+.link--navigation:link,
+.link--navigation:visited {
+  font-size: 1.125rem;
+  color: var(--color-heading-color);
+  font-weight: 500;
+  transition: color var(--transition-duration);
+}
+
+.link--navigation:hover {
+  color: var(--color-primary-shade);
+}
+
+.link--cta:link,
+.link--cta:visited {
+  color: var(--color-neutral);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9px;
 }
