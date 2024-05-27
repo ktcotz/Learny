@@ -1,0 +1,34 @@
+Temat: Animacje
+
+W CSS mamy dostęp do dwóch rodzajów animacji.
+
+1. Transition.
+2. Animation.
+
+!! Transition
+
+Jest to animacja która się wykonuje zazwyczaj jednokrotnie albo powtarzalnie podczas jakieś akcji, typu hover, focus (za każdym razem kiedy najadę na element..).
+
+-> transition: (co chcemy animować) (ile czasu) (jak ma wyglądać animacja - opcjonalne)
+
+transition:color 300ms.
+
+Będzie animować kolor np na hoverze w czasie 300ms.
+
+Najlepiej jakby animację miały pomiędzy 200-500ms.
+
+!! Animation
+
+Animacja, która może być używana kilka razy, raz, nieskończenie wiele, jest to dużo bardziej zaawansowane aniżeli transition. Możemy na tym budować całe animację dla elementów, sekcji.
+
+-> animation: ... (Najlepiej zerknij na MDN!)
+
+animation:bubble 1s linear infinite.
+
+Animację tworzymy podając coś pod nazwą keyframes.
+
+@keyframes NAZWA_ANIMACJI{
+    0%{}
+    100%{}
+}
+
