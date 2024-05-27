@@ -470,7 +470,91 @@
   line-height: 1.8;
 }
 
+/* CTA */
+
+.section-cta {
+  padding: 6rem 0;
+}
+
+.cta {
+  --local-color: #45260a;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  border-radius: 11px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+.cta__image-container {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url("./../content/img/eating.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cta__content {
+  color: var(--local-color);
+  padding: 3rem 4rem 4rem 4rem;
+}
+
+.cta .heading__secondary {
+  color: inherit;
+  margin-bottom: 2rem;
+}
+
+.cta__text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.cta__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+}
+
+.cta__form *:focus {
+  box-shadow: 0 0 0 0.5rem rgba(253, 242, 233, 0.5);
+}
+
+.cta__form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.cta__form input,
+.cta__form select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  font-family: inherit;
+  border: none;
+  background-color: var(--color-primary-tint);
+  border-radius: 9px;
+  color: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-duration);
+}
+
+.cta__form input::placeholder,
+.cta__form select::placeholder {
+  color: #aaa;
+}
+
 /* GLOBAL */
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.5rem rgba(230, 125, 34, 0.5);
+}
 
 .list {
   list-style-type: none;
@@ -503,4 +587,29 @@
 
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn--sign {
+  --local-background: #45260a;
+  background-color: var(--local-background);
+  color: var(--color-neutral);
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  align-self: end;
+  padding: 0.75rem;
+
+  transition: var(--transition-duration);
+}
+
+.btn--sign:hover {
+  color: var(--color-text);
+  background-color: var(--color-neutral);
 }
