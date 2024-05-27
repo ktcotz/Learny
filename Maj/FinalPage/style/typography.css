@@ -99,3 +99,13 @@
   color: var(--color-primary-shade);
   border-bottom-color: transparent;
 }
+
+.link--footer:link,
+.link--footer:visited {
+  color: #767676;
+  transition: var(--transition-duration);
+}
+
+.link--footer:hover {
+  color: var(--color-heading-color);
+}
