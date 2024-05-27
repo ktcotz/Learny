@@ -48,4 +48,9 @@ Praca nad komponentami, poszerzanie wiedzy na tematy np CSS variables. Ostatnieg
 
 ## 25.05.2024
 
+## 26.05.2024
+
+## 27.05.2024
+
 Praca nad finalnym projektem. W projekcie używam wszystkiego co się do tej pory nauczyłem, zmienne, podejście designowe..
+Kolejne dni dalsza praca nad projektem. 27.05.2024 skończenie projektu (dokończony, ale nie wrzucony na githuba.. skończony na innym urządzeniu do którego nie mam już dostępu..)
