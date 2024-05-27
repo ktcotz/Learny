@@ -1,0 +1,106 @@
+@media (max-width: 84rem) {
+  .wrapper--hero {
+    max-width: 75rem;
+  }
+
+  .heading__primary {
+    font-size: 2.75rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 75rem) {
+  html {
+    font-size: 15px;
+  }
+
+  .grid {
+    column-gap: 3rem;
+    row-gap: 4rem;
+  }
+
+  .heading__secondary {
+    font-size: 2.25rem;
+  }
+
+  .heading__tertiary {
+    font-size: 1.5rem;
+  }
+
+  .header {
+    padding: 0 2rem;
+  }
+
+  .hero {
+    gap: 3rem;
+  }
+
+  .testimonials-container {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (max-width: 59rem) {
+  html {
+    font-size: 14px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 0 5rem;
+  }
+
+  .hero__content,
+  .hero__image-container {
+    text-align: center;
+  }
+
+  .hero__links,
+  .customers {
+    justify-content: center;
+  }
+
+  .hero__links {
+    margin-bottom: 2rem;
+  }
+
+  .hero__image {
+    width: 60%;
+  }
+
+  .featured__company {
+    height: 1.5rem;
+  }
+
+  .how__step {
+    font-size: 4.625rem;
+  }
+
+  .meal__content {
+    padding: 1.5rem 2rem 2rem 2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta__form {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing__plan {
+    width: 100%;
+  }
+}
