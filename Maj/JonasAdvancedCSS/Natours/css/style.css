@@ -6,3 +6,167 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+:root {
+  --color-primary-light: 126, 213, 111;
+  --color-primary-medium: 85, 197, 122;
+  --color-primary-dark: 40, 180, 133;
+  --color-text: #777;
+  --color-neutral: #fff;
+
+  --primary-font-family: "Lato", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  --local-padding: 3rem;
+  font-size: 1.6rem;
+  font-family: var(--primary-font-family);
+  line-height: 1.7;
+  color: var(--color-text);
+  padding: var(--local-padding);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.header {
+  --opacity: 0.8;
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(var(--color-primary-light), var(--opacity)),
+      rgb(var(--color-primary-dark), var(--opacity))
+    ),
+    url("./../img/hero.jpg");
+  background-size: cover;
+  background-position: center top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.header__content {
+  --animation-heading-duration: 1s;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading__primary {
+  color: var(--color-neutral);
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+
+.heading__primary--top {
+  --size: 6rem;
+  display: block;
+  font-size: var(--size);
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation: showFromLeft var(--animation-heading-duration) ease-in;
+}
+
+.heading__primary--bottom {
+  --size: 2rem;
+  display: block;
+  font-size: var(--size);
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+  animation: showFromRight var(--animation-heading-duration) ease-in;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo:link,
+.logo:visited {
+  --positioning: 4rem;
+  --size: 3.5rem;
+
+  position: absolute;
+  top: var(--positioning);
+  left: var(--positioning);
+}
+
+.logo__image {
+  height: var(--size);
+}
+
+@keyframes showFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes showFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
