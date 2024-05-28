@@ -1,0 +1,15 @@
+Temat: Variables
+
+Wcześniej opisałem temat zmiennych, teraz poruszę tylko temat co jest bardziej opłacalne, zmienne CSS czy zmienne SCSS które będą poruszane później.
+
+Zmienne SCSS w porównaniu do zmiennych CSS są kompilowane więc znikają np z DevToolsów, nie możemy ich podglądnąć, widzimy tylko wartości.
+
+Zmienne CSS możemy używać z poziomu JavaScript, możemy nimi manipulować.
+
+CSS zmienne, posiadają fallbacki na wszelki wypadek.
+
+color:var(--color-primary,green) <- jeżeli nie ma zmiennej --color-primary to będzie zielony.
+
+Spotykam się też z tym, że zmienne CSS w VSC (nie wiem jak w innych) są dużo lepiej zarządzane, łatwiej IDE je nam podaje, daje komunikaty jeżeli są jakieś błędy.
+
+Z czego wynika, że częściej i lepiej używać zmiennych CSS.
