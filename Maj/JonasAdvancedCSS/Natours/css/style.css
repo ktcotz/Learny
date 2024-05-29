@@ -95,6 +95,11 @@ h6 {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.u-margin-bottom-6 {
+  margin-bottom: 6rem;
 }
 
 .heading__primary {
@@ -125,6 +130,55 @@ h6 {
 .link:visited {
   display: inline-block;
   text-decoration: none;
+}
+
+.link--general:link,
+.link--general:visited {
+  --transition-duration: 300ms;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  border-radius: 10rem;
+  transition: var(--transition-duration);
+}
+
+.link--general:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.link--general:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.link--white:link,
+.link--white:visited {
+  --local-background: var(--color-neutral);
+  background-color: var(--local-background);
+  color: var(--color-text);
+}
+
+.link--animate:link,
+.link--animate:visited {
+  position: relative;
+}
+
+.link--animate:link::after {
+  position: absolute;
+  background-color: var(--local-background);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 10rem;
+  content: "";
+  transition: var(--transition-duration);
+}
+
+.link--animate:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
 }
 
 .logo:link,
