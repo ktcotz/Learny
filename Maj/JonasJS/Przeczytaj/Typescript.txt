@@ -1,0 +1,14 @@
+Temat: Typescript
+
+Naukę od razu za namową seniorów rozpoczynam od Typescriptu.
+
+!!Czym jest Typescript?
+
+Typescript to nadzbiór na język JavaScript który umożliwia nam typowanie danych.
+W JavaScript wszystko robi się dynamicznie.
+
+TypeScript pozwala nam na budowanie bardziej bezpiecznych aplikacji i nie naraża nas na błędy.
+
+!!Jak korzystać z Typescript?
+
+Typescript musimy zainstalować za pomocą paczki NPM i po prostu odpalać za pomocą NPM scripts, tak jak to było w SCSS.

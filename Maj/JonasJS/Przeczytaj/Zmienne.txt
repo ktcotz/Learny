@@ -1,0 +1,47 @@
+Temat: Zmienne
+
+Zmienne są to "pudełka" na nasze wartości. Możemy je w danym momencie modyfikować.
+Zmienne są bardzo podobne do zmiennych CSS'owych..
+
+Zazwyczaj wszystkie dane przechowujemy po prostu w zmiennych.
+
+let points = 30.. 
+
+!!Jak nazywać zmienne
+
+Zmienne najlepiej nazywać camelCase, są też wyjątki kiedy nie możemy używać nazw kluczowych, zaczynających się od cyfr.
+
+let const = 3 (BŁĄD)
+
+let 3year = 3 (BŁĄD)
+
+let previousAge = 33 (DOBRZE)
+
+!!Typy zmiennych
+
+1. Var
+
+Niepopularny i nieużywany już sposób deklarowania zmiennych.
+Możemy go nadpisywać/modyfikować, tworzy zmienną globalną którą możemy używać za pomocą window. Działa na niej hoisting.
+
+2. Let
+
+Popularny sposób używania zmiennych które mają być modyfikowane w przyszłym czasie naszego programu.
+
+3. Const
+
+Popularny sposób używania zmiennych które mają być stałymi w naszym programie.
+
+Różnica pomiędzy let a const?
+
+Let możemy zmodyfikować,
+
+let points = 30;
+
+points = 31.
+
+(WSZYSTKO DZIAŁA POPRAWNIE)
+
+const points = 30;
+
+points = 31 (BŁĄD, points jest zmienną stałą.)

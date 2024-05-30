@@ -1,0 +1,26 @@
+Temat: TypyDanych
+
+!!Rodzaje typów danych
+
+1. Number (liczby całkowite,zmiennoprzecinkowe).
+2. String (tekst).
+3. Boolean (prawda lub fałsz).
+4. Undefined (wartość niezdefiniowana, np. let points;).
+5. Null (wartość "zero").
+6. Symbol (wartość która jest unikalna i nie można jej zmienić).
+7. BigInt (wartości które możemy używać poza zakresem Number który obłsuguje liczby do jakiegoś momentu).
+
+Jak wspomniałem wcześniej, JS posiada dynamiczne typowanie danych.
+W momencie zadeklarowania zmiennej nie musisz podawać żadnego typu, JS sam go wywnioskuje na podstawie wartości.
+
+W Typescript możemy podać typ zmiennej za pomocą symbolu :.
+
+let points : number = 30. (Points będzie zmienną typu number).
+
+O tyle jest to dobre, że nie możemy nadpisać points za pomocą innej wartości niż number!!
+
+!! Referencja typów w typescript
+
+Typescript też potrafi wywnioskować typ dynamicznie na podstawie wartości dlatego pisanie typów w taki sposób jak powyżej nie ma sensu, bo IDE samo nam wywnioskuje taki typ.
+
+Prawde mówiąc używamy typów w momencie w którym mamy mieć dać znać IDE jaki to jest typ bo nie jest w stanie wywnioskować.
