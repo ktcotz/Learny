@@ -1,0 +1,80 @@
+@use "./../../abstracts/mixins" as *;
+
+.link {
+  &:link,
+  &:visited {
+    --transition-duration: 300ms;
+    display: inline-block;
+    text-decoration: none;
+  }
+  &--general {
+    &:link,
+    &:visited {
+      padding: 1.5rem 4rem;
+      text-transform: uppercase;
+      border-radius: 10rem;
+      transition: var(--transition-duration);
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &--white {
+    &:link,
+    &:visited {
+      --local-background: var(--color-neutral);
+      background-color: var(--local-background);
+      color: var(--color-text);
+    }
+  }
+
+  &--animate {
+    &:link,
+    &:visited {
+      position: relative;
+
+      @include keyframes(showFromBottom) {
+        0% {
+          opacity: 0;
+          transform: translateY(10rem);
+        }
+        80% {
+          opacity: 1;
+          transform: translateY(-1rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      animation: showFromBottom var(--animation-heading-duration) ease-in;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    background-color: var(--local-background);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10rem;
+    content: "";
+    transition: var(--transition-duration);
+  }
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+}

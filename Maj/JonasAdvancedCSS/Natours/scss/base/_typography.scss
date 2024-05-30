@@ -1,0 +1,55 @@
+@use "./../abstracts/mixins" as *;
+
+.heading__primary {
+  color: var(--color-neutral);
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  &--top {
+    --size: 6rem;
+    display: block;
+    font-size: var(--size);
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    @include keyframes(showFromLeft) {
+      0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+      }
+      80% {
+        opacity: 1;
+        transform: translateX(1rem);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    animation: showFromLeft var(--animation-heading-duration) ease-in;
+  }
+  &--bottom {
+    --size: 2rem;
+    display: block;
+    font-size: var(--size);
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+
+    @include keyframes(showFromRight) {
+      0% {
+        opacity: 0;
+        transform: translateX(10rem);
+      }
+      80% {
+        opacity: 1;
+        transform: translateX(-1rem);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    animation: showFromRight var(--animation-heading-duration) ease-in;
+  }
+}

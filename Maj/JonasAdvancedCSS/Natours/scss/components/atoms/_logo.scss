@@ -1,0 +1,15 @@
+.logo {
+  &:link,
+  &:visited {
+    --positioning: 4rem;
+    --size: 3.5rem;
+
+    position: absolute;
+    top: var(--positioning);
+    left: var(--positioning);
+  }
+
+  &__image {
+    height: var(--size);
+  }
+}
