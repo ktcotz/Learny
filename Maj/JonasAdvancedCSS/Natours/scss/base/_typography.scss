@@ -53,3 +53,37 @@
     animation: showFromRight var(--animation-heading-duration) ease-in;
   }
 }
+
+.heading__secondary {
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    rgb(var(--color-primary-light)),
+    rgb(var(--color-primary-dark))
+  );
+  color: transparent;
+  background-clip: text;
+
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition: 300ms;
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+.heading__tertiary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

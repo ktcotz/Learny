@@ -77,4 +77,27 @@
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
   }
+
+  &--secondary {
+    &:link,
+    &:visited {
+      font-size: 1.6rem;
+      color: rgb(var(--color-primary-medium));
+      padding: 3px;
+      border-bottom: 1px solid rgb(var(--color-primary-medium));
+      transition: var(--transition-duration);
+    }
+
+    &:hover {
+      background-color: rgb(var(--color-primary-medium));
+      color: var(--color-neutral);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      transform: translateY(0);
+    }
+  }
 }
