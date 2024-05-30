@@ -1,0 +1,12 @@
+Temat: Npm
+
+NPM - menedżer paczek.
+
+Możemy dzięki temu narzędziu instalować różne "paczki" do naszego projektu. Paczki to po prostu stworzony przez kogoś kod dzięki któremu możemy wykonywać jego funkcję. Stworzył ktoś paczkę o nazwie ``matematyka`` i możemy z niej używać jakieś funkcje typu sinusy, nie pisząc tego sami.
+
+Najlepiej obejrzeć filmik na temat NPM.
+
+Paczki instalujemy za pomocą komendy npm install NAZWA_PACZKI.
+
+NPM udostępnia też mechanizm zwany "npm scripts", są to skrypty które możemy używać w naszym projekcie.
+Pobraliśmy SCSS i chcemy go kompilować? Używamy npm script który za nas to robi.

@@ -1,0 +1,7 @@
+Temat: Sass
+
+Sass to narzędzie które jest nadbudową CSS.
+Jest to czysty CSS ale powiększony o różne ułatwiające rzeczy.
+Możemy w nim zagnieżdżać selektory, pisać bardziej zaawansowane rzeczy jak funkcje,mixiny,pętle..
+
+Aby korzystać z SCSS należy znać NPM i jak instalować paczki.

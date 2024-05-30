@@ -161,6 +161,7 @@ h6 {
 .link--animate:link,
 .link--animate:visited {
   position: relative;
+  animation: showFromBottom var(--animation-heading-duration) ease-in;
 }
 
 .link--animate:link::after {
@@ -177,7 +178,7 @@ h6 {
 }
 
 .link--animate:hover::after {
-  transform: scale(1.5);
+  transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
 
@@ -222,5 +223,20 @@ h6 {
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes showFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
