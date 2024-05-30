@@ -1,0 +1,12 @@
+Temat: Decyzje
+
+JS umożliwia mechanizm którym będę nazywał "decyzje".
+Jak nazwa mówi, możemy podjąc daną decyzję na podstawie czegoś.
+Chce sprawdzić czy mój wiek jest większy niż 18? Sprawdzam i wyświetlam coś na podstawie.
+
+Tutaj przydaje się `if,else,else if`.
+
+Brzmi to tak..
+ Jeżeli if to zrób coś,
+ Jeżeli coś innego to else if.
+ Jeżeli nic się nie zgadza to else.

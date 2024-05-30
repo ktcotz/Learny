@@ -1,0 +1,10 @@
+Temat: TemplateLiterals
+
+Prosty temat dotyczący łatwiejszego używania stringów.
+JS umożliwia nam tworzenie stringów za pomocą `` w którym możemy dynamicznie wrzucać zmienne. Reaguje on też na łamanie spacji i linii.
+
+Przykład..
+
+const firstName = "Kamil"
+
+console.log(`Hello, my name: ${firstName}`).
