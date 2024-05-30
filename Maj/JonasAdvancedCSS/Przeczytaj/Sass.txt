@@ -5,3 +5,7 @@ Jest to czysty CSS ale powiększony o różne ułatwiające rzeczy.
 Możemy w nim zagnieżdżać selektory, pisać bardziej zaawansowane rzeczy jak funkcje,mixiny,pętle..
 
 Aby korzystać z SCSS należy znać NPM i jak instalować paczki.
+
+Co jest chyba najbardziej używane to to, że mamy możliwość tworzenia innych plików, dzięki czemu nasz kod jest dużo łatwiejszy do utrzymania i zarządzania. Możemy tworzyć swoje własne architektury na podstawie plików. W CSS też możemy tworzyć takie pliki, ale źle to wpływa na optymalizację strony jak mamy więcej niż jeden plik CSS, więc jak to działa w SCSS?
+
+SCSS kompiluje cały kod który w nim piszemy do jednego pliku CSS i potem go serwuje dla strony, ot cała historia.. 
