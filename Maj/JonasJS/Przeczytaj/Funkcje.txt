@@ -1,0 +1,22 @@
+Temat: Funkcje
+
+Funkcje to mechanizm który pozwala nam reużywać kod który jest powtarzany.
+Pozwala też tworzyć oddzielne bloki kodu.
+
+function sayHello(){}
+sayHello()
+
+Funkcje mogą otrzymywać argumenty które możemy wykorzystywać w funkcji.
+
+function sayHello(name){
+    return name
+}
+sayHello("Kamil")
+
+!!Sposoby tworzenia funkcji.
+
+1. Anonymous - function sayHello(){}
+2. Expression - const sayHello = function(){}
+3. Arrow - const sayHello = () => {}
+
+Są między nimi różnice które opiszę później.

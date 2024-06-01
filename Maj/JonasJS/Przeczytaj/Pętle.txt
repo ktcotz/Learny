@@ -1,0 +1,10 @@
+Temat: Pętle
+
+Pętle są mechanizmem który umożliwia nam powtórzenie kodu daną ilość razy.
+
+Chcemy wyświetlić 15 razy cześć? Pętla!
+Chcemy przeiterować po tablicy? Pętla!
+
+Istnieje bardzo duża ilość pętli, for/for of/for in/while/do while/for each.
+
+Myślę, że najlepszym sposobem to na daną pętle sprawdź sobie w internecie albo kursie.

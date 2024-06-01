@@ -1,0 +1,16 @@
+Temat: Tablice i Obiekty
+
+Tablica to zbiór wartości tego samego typu/róznych typów.
+Możemy na niej wykonywać różne operacje, używać pętli aby ją wyświetlić.
+
+Jest to jeden z najlepszych sposób na reprezentowanie danych.
+
+const numbers = [1,2,3,4,5].
+
+Obiekt to kontener w którym przechowujemy jakieś wartości typu klucz/wartość. Jest to rónież jeden z najlepszych sposób na reprezentowanie danych. Bardzo łatwo w nim odczytać która wartość odpowiada czemu, mamy możliwość zagnieżdżania funkcji które są nazywane metodami. 
+
+const obj = {
+    name:"Kamil"
+}
+
+Tablice i obiekty są najczęściej wykorzystywane w programach jako zbiory danych.
