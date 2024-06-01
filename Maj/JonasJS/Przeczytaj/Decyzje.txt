@@ -24,3 +24,13 @@ switch (age) {
 
 1. Jeżeli chcemy obsłużyć jakąś wartość której nie obsługujemy wystarczy dodać instrukcję default:.
 2. Po każdej akcji używaj break, chyba, że używasz od razu returna.
+
+Trzeci sposób obsługiwania decyzji to ternary operator.
+
+SRPAWDZENIE ? JEŻELI_PRAWDA : JEŻELI_FAŁSZ
+
+Jest to podobny sposób do używania if/else/else if ale możemy szybko skrócić kod.
+
+const age = 20;
+
+age>18?pełnoletni:niepełnoletni

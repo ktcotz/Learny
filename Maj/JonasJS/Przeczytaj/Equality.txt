@@ -1,0 +1,14 @@
+Temat: Equality
+
+JS umożliwia nam sprawdzenie wartości elementów za pomocą == albo ===.
+
+!!Jakie są różnice?
+
+1. Najwazniejsza informacja to ta, że triple === sprawdza nasze elementy na podstawie wartości ale co najważniejsze też na podstawie typu.
+
+3 == "3" (PRAWDA)
+3 === "3" (FAŁSZ) 
+
+!!WAŻNE
+
+Zawsze używaj triple ===!
