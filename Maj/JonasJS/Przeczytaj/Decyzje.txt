@@ -10,3 +10,17 @@ Brzmi to tak..
  Jeżeli if to zrób coś,
  Jeżeli coś innego to else if.
  Jeżeli nic się nie zgadza to else.
+
+Do decyzyjności należy też dodać mechanizm switch.
+Polega na sprawdzeniu wartości i w zależności od wartości zrobienia jakieś akcji.
+
+switch (age) {
+    case 18:
+      console.log("Jest ok!")
+      break;
+}
+
+!!Ważne informacje o switch
+
+1. Jeżeli chcemy obsłużyć jakąś wartość której nie obsługujemy wystarczy dodać instrukcję default:.
+2. Po każdej akcji używaj break, chyba, że używasz od razu returna.

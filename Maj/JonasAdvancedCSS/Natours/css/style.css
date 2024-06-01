@@ -298,6 +298,11 @@ h6 {
   transform: translateY(-1.5rem) scale(1.03);
 }
 
+.card {
+  background-color: orangered;
+  height: 50rem;
+}
+
 .header {
   --opacity: 0.8;
   position: relative;
@@ -372,6 +377,12 @@ h6 {
 }
 .section-features > * {
   transform: skewY(7deg);
+}
+
+.section-tours {
+  background-color: var(--color-gray-light-1);
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem;
 }
 
 /*# sourceMappingURL=style.css.map */
