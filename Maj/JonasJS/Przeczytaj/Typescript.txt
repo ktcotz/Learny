@@ -12,3 +12,7 @@ TypeScript pozwala nam na budowanie bardziej bezpiecznych aplikacji i nie naraż
 !!Jak korzystać z Typescript?
 
 Typescript musimy zainstalować za pomocą paczki NPM i po prostu odpalać za pomocą NPM scripts, tak jak to było w SCSS.
+
+!!Typescript, typy i wszystko o typescript!
+
+Mój naukowy playground : https://www.typescriptlang.org/play/?#code/C4TwDgpgBA4gTgewMYTiAysBdoF4oCuAdgNZEIDuRA3AFC2iSyIpoCSwEAtlPsWZRr1G0AMIBDMDgDOEdOIA24gCa9CpclTpA

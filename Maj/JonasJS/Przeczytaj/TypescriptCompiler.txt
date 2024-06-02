@@ -1,0 +1,28 @@
+Temat: Typescript Compiler
+
+Opiszę najważniejsze elementy pliku konfiguracyjnego typescriptu.
+
+1. Watch-mode.
+
+Do każdego skryptu możemy dodać flagę --watch, dzięki której będzie na bieżąco kompilować nasz kod ts patrząc na zmiany w nim zachodzące.
+
+2. Target
+
+Oznacza do jakiej wersji JavaScript nasz kod TS ma być kompilowany.
+
+3. Include/exclude
+
+Możemy includować pliki które chcemy żeby były kompilowane, oraz excludować te które nie chcielibysmy, np node_modules.
+
+4. Libs
+
+Możemy dodawać "biblioteki" do naszego typescriptu który będzie obsługiwał jakieś API, np DOM typescript aby obsługiwał typy DOM.
+
+5. RootDir & OutDir
+
+RootDir to miejsce w którym ma patrzeć na nasze pliki ts do kompilowania.
+OutDir to miejsce do którego wyśle pliki JS które będą skompilowane.
+
+6. Strict
+
+Bardziej restrykcyjne zasady pisania kodu.
