@@ -299,8 +299,89 @@ h6 {
 }
 
 .card {
-  background-color: orangered;
-  height: 50rem;
+  --transition-duration: 1500ms;
+  --height: 52rem;
+  position: relative;
+  perspective: 150rem;
+  height: var(--height);
+  color: var(--color-neutral);
+}
+.card:hover .card__front {
+  transform: rotateY(180deg);
+}
+.card:hover .card__back {
+  transform: rotateY(0);
+}
+.card--p1 {
+  --local-gradient-start: #ffb900;
+  --local-gradient-end: #ff7730;
+  --local-image: url("./../img/nat-5.jpg");
+}
+.card--p2 {
+  --local-gradient-start: rgb(var(--color-primary-light));
+  --local-gradient-end: rgb(var(--color-primary-dark));
+  --local-image: url("./../img/nat-5.jpg");
+}
+.card--p3 {
+  --local-gradient-start: #2998ff;
+  --local-gradient-end: #5643fa;
+  --local-image: url("./../img/nat-5.jpg");
+}
+.card__picture {
+  --height: 23rem;
+  height: var(--height);
+  background-size: cover;
+  background-image: linear-gradient(to right bottom, var(--local-gradient-start), var(--local-gradient-end)), var(--local-image);
+  background-blend-mode: screen;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.card__heading {
+  position: absolute;
+  top: 12rem;
+  width: 75%;
+  right: 2rem;
+  text-align: right;
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.card__heading span {
+  background-image: linear-gradient(to right bottom, var(--local-gradient-start), var(--local-gradient-end));
+  padding: 1rem 1.5rem;
+  box-decoration-break: clone;
+}
+.card__front, .card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: var(--height);
+  backface-visibility: hidden;
+  transition: var(--transition-duration) ease;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+.card__back {
+  transform: rotateY(-180deg);
+  background-image: linear-gradient(to right bottom, var(--local-gradient-start), var(--local-gradient-end));
+}
+.card__details {
+  padding: 3rem;
+}
+.card__details .list {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+.card__details .list__item {
+  color: var(--color-text);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card__details .list__item:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
 .header {

@@ -1,0 +1,12 @@
+Temat: DOM
+
+!! Co to DOM?
+
+DOM - Document Object Model, reprezenetuje całe drzewo elementów które wykorzystujemy aktualnie na stronie. Reprezentowane jest w formie drzewa w którym najwyżej jest HTML i sukcesywnie idzie w dół.
+Dzięki taki drzewu możemy się odwoływać do elementów bezpośrednio przez JS, zmieniać ich kontent, dodawać klasy i wiele innych.
+
+!! Jak się poruszać po drzewie DOM?
+
+Pobierając elementy albo używając właściwości na elementach takich jak nextElementSibling..
+
+Aby pobrać element używamy z klauzuli querySelector!

@@ -1,1 +1,3 @@
-const firstName = "Kamil";
+/*
+ ********** Guessing game
+ */
