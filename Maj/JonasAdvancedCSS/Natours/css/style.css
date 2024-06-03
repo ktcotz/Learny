@@ -76,6 +76,10 @@ h6 {
   margin-bottom: 8rem;
 }
 
+.u-margin-top-10 {
+  margin-top: 10rem;
+}
+
 .u-center-text {
   text-align: center;
 }
@@ -159,6 +163,7 @@ h6 {
 
 .link:link, .link:visited {
   --transition-duration: 300ms;
+  position: relative;
   display: inline-block;
   text-decoration: none;
 }
@@ -180,6 +185,11 @@ h6 {
   --local-background: var(--color-neutral);
   background-color: var(--local-background);
   color: var(--color-text);
+}
+.link--green:link, .link--green:visited {
+  --local-background: rgb(var(--color-primary-medium));
+  background-color: var(--local-background);
+  color: var(--color-neutral);
 }
 .link--animate:link, .link--animate:visited {
   position: relative;
@@ -320,12 +330,12 @@ h6 {
 .card--p2 {
   --local-gradient-start: rgb(var(--color-primary-light));
   --local-gradient-end: rgb(var(--color-primary-dark));
-  --local-image: url("./../img/nat-5.jpg");
+  --local-image: url("./../img/nat-6.jpg");
 }
 .card--p3 {
   --local-gradient-start: #2998ff;
   --local-gradient-end: #5643fa;
-  --local-image: url("./../img/nat-5.jpg");
+  --local-image: url("./../img/nat-7.jpg");
 }
 .card__picture {
   --height: 23rem;
@@ -382,6 +392,26 @@ h6 {
 }
 .card__details .list__item:not(:last-child) {
   border-bottom: 1px solid #eee;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+.card__price-box {
+  margin-bottom: 8rem;
+  color: var(--color-neutral);
+  text-align: center;
+}
+.card__price-only {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 100;
 }
 
 .header {
@@ -462,7 +492,7 @@ h6 {
 
 .section-tours {
   background-color: var(--color-gray-light-1);
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem;
 }
 

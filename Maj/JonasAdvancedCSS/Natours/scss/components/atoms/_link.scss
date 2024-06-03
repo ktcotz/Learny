@@ -4,6 +4,7 @@
   &:link,
   &:visited {
     --transition-duration: 300ms;
+    position: relative;
     display: inline-block;
     text-decoration: none;
   }
@@ -33,6 +34,15 @@
       --local-background: var(--color-neutral);
       background-color: var(--local-background);
       color: var(--color-text);
+    }
+  }
+
+  &--green {
+    &:link,
+    &:visited {
+      --local-background: rgb(var(--color-primary-medium));
+      background-color: var(--local-background);
+      color: var(--color-neutral);
     }
   }
 

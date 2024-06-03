@@ -1,38 +1,20 @@
-/*
- ********** Guessing game
- */
-var handleGuessingGame = function () {
-    var messageElement = document.querySelector(".message");
-    var guessInput = document.querySelector(".guess");
-    var checkButton = document.querySelector(".check");
-    var setMessage = function (message) {
-        if (!messageElement)
-            return;
-        messageElement.textContent = message;
-    };
-    var getGuessInputValue = function () {
-        if (!guessInput) {
-            throw new Error("Can't resolve a guess input!");
-        }
-        var value = guessInput.value;
-        if (!value) {
-            throw new Error("No input 🛑");
-        }
-        return value;
-    };
-    var guessNumber = function () {
-        try {
-            var guessingNumber = getGuessInputValue();
-            console.log(guessingNumber);
-        }
-        catch (err) {
-            if (err instanceof Error) {
-                setMessage(err.message);
-            }
-        }
-    };
-    checkButton === null || checkButton === void 0 ? void 0 : checkButton.addEventListener("click", function () {
-        guessNumber();
-    });
+// Pig game
+var firstPlayerScore = document.querySelector("#score--0");
+var secondPlayerScore = document.querySelector("#score--1");
+var dice = document.querySelector(".dice");
+var rollButton = document.querySelector(".btn--roll");
+var newButton = document.querySelector(".btn--new");
+var holdButton = document.querySelector(".btn--hold");
+if (firstPlayerScore) {
+    firstPlayerScore.textContent = String(0);
+}
+if (secondPlayerScore) {
+    secondPlayerScore.textContent = String(0);
+}
+dice === null || dice === void 0 ? void 0 : dice.classList.add("hidden");
+var rollDice = function () {
+    var diceNumber = Math.trunc(Math.random() * 6) + 1;
+    dice === null || dice === void 0 ? void 0 : dice.setAttribute("src", "./img/dice-".concat(diceNumber, ".png"));
+    dice === null || dice === void 0 ? void 0 : dice.classList.remove("hidden");
 };
-handleGuessingGame();
+rollButton === null || rollButton === void 0 ? void 0 : rollButton.addEventListener("click", rollDice);

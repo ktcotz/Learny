@@ -25,13 +25,13 @@
   &--p2 {
     --local-gradient-start: rgb(var(--color-primary-light));
     --local-gradient-end: rgb(var(--color-primary-dark));
-    --local-image: url("./../img/nat-5.jpg");
+    --local-image: url("./../img/nat-6.jpg");
   }
 
   &--p3 {
     --local-gradient-start: #2998ff;
     --local-gradient-end: #5643fa;
-    --local-image: url("./../img/nat-5.jpg");
+    --local-image: url("./../img/nat-7.jpg");
   }
 
   &__picture {
@@ -108,5 +108,29 @@
         }
       }
     }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+
+  &__price-box {
+    margin-bottom: 8rem;
+    color: var(--color-neutral);
+    text-align: center;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
