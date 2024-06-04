@@ -1,0 +1,32 @@
+Temat: JSOdKulis
+
+W tym pliku opiszę JS od warstwy działania i tego jak się JS zachowuje.
+
+1. Overview of Javascript
+
+* High-level - jest wysokopoziomowym językiem który dba o wszystko zza kulis, nie musimy się martwić o zarządzanie pamięcia.
+
+* Garbage-collected - algorytm wewnątrz JS który usuwa niepotrzebne obiekty, nieużywane.
+
+* JIT compiled - JS nie jest ani kompilowany ani interpretowany, jest kombinacja dwojga, jest kompilowany i interpretowany w tym samym czasie.
+Odsyłam po więcej informacji na wikipedię.
+
+* Multi-paradigm - Możemy używać różnych paradygmatów programowania, funkcyjnego, obiektowego, proceduralnego..
+
+* Prototype based oriented - JS bazuje na prototypach obiektów, wszystko jest na tym zbudowane.
+
+* First-class functions - Klasy pierwszego rzędu, możemy używać funkcji jako zmiennych, możemy je dawać innym funkcją i je zwracać z funkcji.
+
+* Dynamic - dynamiczny, nie dbamy o typ danych, (DLATEGO KORZYSTAMY Z TYPESCRIPT!)
+
+* Single-threaded - Jedno wątkowy, dlatego nie jest dobry do trudnych procesów wymagających wielu wątków, przeprocesowywania zdjęć..
+
+* Non-blocking event loop - Pętla zdarzeń która rozwiązuje problem single threaded. Wszystkie zdarzenia asynchroniczne są przez nią obsługiwane.
+Jeżeli chcesz wiedzieć jak działa odsyłam na YouTube.
+
+2. Execution Context & Call Stack
+
+Wstępnie cały kod jest skanowany i kod najwyższego rzędu (globalny) jest zapisywany w globalnym kontekście. Każde wywołanie funkcji tworzy swój własny kontekst, pamiętaj istnieje tylko jeden globalny!
+
+Call stack - miejsce w którym wykonywany jest kod, est to stos na który wrzuca się wykonywany kod.
+
