@@ -10,8 +10,10 @@
 @use "./components/molecules/card";
 @use "./components/molecules/story";
 @use "./components/molecules/bg-video";
+@use "./components/molecules/form";
 
 @use "./layout/header";
 @use "./layout/grid";
+@use "./layout/footer";
 
 @use "./pages/home";

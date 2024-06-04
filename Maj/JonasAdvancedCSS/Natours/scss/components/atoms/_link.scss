@@ -1,14 +1,19 @@
 @use "./../../abstracts/mixins" as *;
 
 .link {
+  &,
   &:link,
   &:visited {
     --transition-duration: 300ms;
     position: relative;
     display: inline-block;
     text-decoration: none;
+
+    border: none;
+    cursor: pointer;
   }
   &--general {
+    &,
     &:link,
     &:visited {
       padding: 1.5rem 4rem;
@@ -22,7 +27,9 @@
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     }
 
-    &:active {
+    &:active,
+    &:focus {
+      outline: none;
       transform: translateY(-1px);
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     }
@@ -38,6 +45,7 @@
   }
 
   &--green {
+    &,
     &:link,
     &:visited {
       --local-background: rgb(var(--color-primary-medium));
@@ -108,6 +116,23 @@
     &:active {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
       transform: translateY(0);
+    }
+  }
+
+
+  &--footer {
+    &:link,
+    &:visited {
+      background-color: var(--color-darker);
+      color: var(--color-gray-light-1);
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: rgb(var(--color-primary-medium));
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+      transform: rotate(5deg) scale(1.3);
     }
   }
 }
