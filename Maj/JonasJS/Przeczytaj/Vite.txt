@@ -1,0 +1,15 @@
+Temat: Vite
+
+Vite to bundler który potrafi stworzyć nam projekt w oparciu o technologię które chcemy, do wyboru TS, React, TS+React, różne kombinacje.
+
+!!Dlaczego o tym piszę?
+
+Piszę dlatego, że Vite jest świetnym narzędziem które obsługuje nasz projekt, pozwala nam rozkładać kod na wiele plików, wszystko wynikowo daje do jednego, ma bardzo dużą łatwość buildowania projektu i wrzucania na hosting.
+
+!!Jak korzystać?
+
+Wystarczy albo wejść w docsy i sprawdzić albo przejść przez kreator tworzenia projekut za pomocą
+
+npm create vite@latest TWÓJ_FOLDER LUB .
+
+To tyle :)
