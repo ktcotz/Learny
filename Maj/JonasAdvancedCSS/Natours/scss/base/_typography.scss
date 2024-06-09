@@ -26,6 +26,11 @@
       }
     }
 
+    @include media(phone) {
+      --size: 5rem;
+      letter-spacing: 1rem;
+    }
+
     animation: showFromLeft var(--animation-heading-duration) ease-in;
   }
   &--bottom {
@@ -48,6 +53,10 @@
         opacity: 1;
         transform: translateX(0);
       }
+    }
+
+    @include media(phone) {
+      letter-spacing: 0.5rem;
     }
 
     animation: showFromRight var(--animation-heading-duration) ease-in;
@@ -73,6 +82,14 @@
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  @include media(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include media(phone) {
+    font-size: 2.5rem;
   }
 }
 

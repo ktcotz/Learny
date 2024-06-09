@@ -1,3 +1,5 @@
+@use "./../../abstracts/mixins" as *;
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -9,6 +11,18 @@
 
   & > * {
     transform: skewX(12deg);
+    @include media(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  @include media(tab-port) {
+    width: 100%;
+    padding: 4rem 4rem 4rem 7rem;
+  }
+
+  @include media(phone) {
+    transform: skewX(0);
   }
 
   &__shape {
@@ -21,6 +35,10 @@
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+
+    @include media(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__caption {

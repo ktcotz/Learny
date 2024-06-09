@@ -1,3 +1,5 @@
+@use "./../../abstracts/mixins" as *;
+
 .form {
   &__group {
     &:not(:last-child) {
@@ -30,6 +32,10 @@
     &:focus:invalid {
       border-color: #ff7730;
     }
+
+    @include media(tab-port) {
+      width: 100%;
+    }
   }
 
   &__input:placeholder-shown + &__label {
@@ -51,6 +57,11 @@
   &__radio-group {
     display: inline-block;
     width: 49%;
+
+    @include media(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-label {

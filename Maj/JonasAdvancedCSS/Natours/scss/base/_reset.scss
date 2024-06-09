@@ -35,6 +35,10 @@ body {
   color: var(--color-text);
   padding: var(--local-padding);
   -webkit-font-smoothing: antialiased;
+
+  @include media(tab-port) {
+    --local-padding: 0;
+  }
 }
 
 img,
