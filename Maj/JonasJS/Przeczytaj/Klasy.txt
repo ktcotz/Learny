@@ -1,0 +1,47 @@
+Temat: Klasy
+
+!!Czym są klasy?
+
+Klasa reprezentuje dany obiekt na podstawie jego własności, metod (funkcji) działania. Klasą możemy nazwać obiekt który jest składową innych klas.
+Wyobraźmy sobie, że człowiek jest taką klasą, każdy człowiek posiada te same właściwości ale inne wartości, każdy ma inny kolor włosów/oczu...
+
+Z przełożenia na programowanie, wyobraźmy sobie listę produktów, klasą która jest używana w klasie listy jest klasa produktu, czyli klasa któa jest składową innej klasy.
+
+Klasę można określić jako "blueprint" obiektu, coś co definiuje jak będzie wyglądac obiekt który tworzymy na jej podstawie.
+
+class Animal {
+    name = "Reksio"
+}
+
+lub
+
+class Animal {
+    constructor(public name:string){}
+}
+
+Mamy możliwość tworzenia obiektów i wrzucania do nich wartości.
+
+const reksio = new Animal("Reksio");
+const luna = new Animal("Luna");
+
+!! Constructor
+
+Każda klasa posiada specjalną metodę constructor która się wywołuje podczas tworzenia obiektu. Możemy w niej podać właściwości dla naszego obiektu które zostaną w nim wpisane. (PRZYKŁAD POWYŻEJ).
+
+!! Metody
+
+Klasa automatycznie podczas tworzenia metody wrzuca ją do constructor object mechanism, dzięki któremu podczas wywoływania metody na obiekcie, sięga po nią do pamięci, nie tworzy nowej funkcji dla każdego obiektu.
+
+!! Private/protected/public/readonly
+
+TS umożliwia nam tworzenie pól obiektu private/protected i public. Public oznacza, że właściwości są publiczne i można nimi zarządzać poza obiektem/klasą. Protected umożliwia tylko wewnątrz i dla dziedziczących klasę, private tylko w obrębie klasy bez dziedziczenia.
+
+WAŻNE!! TS skompiluje to do JS, program może się wykona i nie będzie problemu jak ktoś będzie chciał zmienić protected wartość, ale TS wykrzyczy nam error!
+
+Właściwości readonly są tylko do odczytania, nie możemy ich zmieniać.
+
+!! Dziedziczenie klasy
+
+Klasa może odziedziczyć inną klasę i wziąć od niej wartości które chcemy aby wzięła. Wszystkie albo konkretne. Możemy też stworzyć klasy pochodne głównej które będa miały te same właściwości ale z dodatkiem jakiś innych.
+
+Np klasa Dog która łapie po klasie Animal wszystkie właściwości ale dodaje coś jeszcze.
