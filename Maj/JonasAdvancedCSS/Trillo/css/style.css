@@ -60,6 +60,8 @@ body {
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
   flex: 0 0 18%;
   background-color: var(--color-grey-dark-1);
 }
@@ -169,9 +171,60 @@ body {
   color: var(--color-neutral);
 }
 
+.list {
+  --size_icon: 1.75rem;
+  font-size: 1.4rem;
+  list-style-type: none;
+  margin-top: 3.5rem;
+}
+.list__item {
+  position: relative;
+}
+.list__item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.list__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--color-primary);
+  transform: scaleY(0);
+  transition: transform 0.3s, width 0.3s 0.3s;
+}
+.list__item:hover::before, .list__item--active::before {
+  transform: scaleY(1);
+  width: 100%;
+}
+.list__icon {
+  height: var(--size_icon);
+  width: var(--size_icon);
+  margin-right: 2rem;
+  fill: currentColor;
+}
+
+.copyright {
+  margin-top: auto;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--color-grey-light-4);
+}
+
 .link:link, .link:visited {
   display: inline-block;
   text-decoration: none;
+}
+.link--navigation:link, .link--navigation:visited {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  color: var(--color-grey-light-1);
 }
 
 /*# sourceMappingURL=style.css.map */
