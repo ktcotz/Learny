@@ -30,3 +30,41 @@ Wstępnie cały kod jest skanowany i kod najwyższego rzędu (globalny) jest zap
 
 Call stack - miejsce w którym wykonywany jest kod, est to stos na który wrzuca się wykonywany kod.
 
+
+3. Scope Chain
+
+Scope oznacza w jaki sposób zmienne w naszym programie są dostępne w różnych miejscach kodu. Gdzie "żyją"..
+Nie zawsze mamy możliwość używania zmiennych w miejscach gdzie nie mają one zasięgu.
+
+Mamy zakresy blokowe,globalne, funkcyjne..
+
+Zakresy są tworzone w momencie tworzenia kodu, nie w momencie wywoływania jakieś zmiennej.
+
+Scope odnosi się do ruchu z dołu do góry, jeżeli w danym scopie nie ma zmiennej sięga do kolejnego wyższego zakresu. Nie bierze pod uwagę zakresów pobocznych.
+
+4. Hoisting
+
+Hoisting to mechanizm wynoszenia funkcji,zmiennych na sam początek działania kodu. Nie wszystkie rodzaje zmiennych oraz funkcji są hoistowane.
+
+5. TDZ - Temporal dead zone
+
+Miejsce w którym zmienna nie jest dostępna.
+
+6. This
+
+This w JS uwzględnia działanie podczas wywołania nie tworzenia kodu, jest to zmienna właściwość zależna od wywołania kontekstu.
+
+Jeżeli używasz podczas funkcji albo w scope globalnym, wskaże undefined/Window.
+
+Jeżeli używasz w obiekcie wskaże na aktualny obiekt wywołania.
+
+Jeżeli używasz na DOM elemencie, wskaże na aktualny DOM element.
+
+Jeżeli używasz w arrow function, wskaże na leksykalne this, poziomu wyżej.
+
+7. Referencja
+
+Typy proste w momencie kopiowania, kopiują wartość.
+Typy złożone w momencie kopiowania, kopiują referencję.
+
+W momencie zmiany skopiowanego elementu złożonego, zmiana nastąpi w miejscu referencji więc każda zmienna odwołująca się do obiektu będzie widzieć zmianę.
