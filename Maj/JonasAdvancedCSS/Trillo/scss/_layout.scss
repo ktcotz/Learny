@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .wrapper {
   --width: 120rem;
   --horizontal-margin: 8rem;
@@ -5,6 +7,11 @@
   margin: var(--horizontal-margin) auto;
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+  }
 }
 
 .header {
@@ -17,10 +24,18 @@
   height: var(--height);
   background-color: var(--color-neutral);
   border-bottom: 1px solid var(--color-grey-light-2);
+  @media only screen and (max-width: $bp-smallest) {
+    --height: 12rem;
+    flex-wrap: wrap;
+    align-content: space-around;
+  }
 }
 
 .content {
   display: flex;
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {

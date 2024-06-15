@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 *,
 *::before,
 *::after {
@@ -8,6 +10,10 @@
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
 }
 
 body {
