@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "sass ./Trillo/scss/main.scss ./Trillo/css/style.css --watch"
+    "compile:sass": "sass ./Nexter/sass/main.scss ./Nexter/css/style.css --watch"
   },
   "keywords": [],
   "author": "",
