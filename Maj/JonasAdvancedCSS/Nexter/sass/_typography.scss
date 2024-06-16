@@ -55,6 +55,14 @@
       background-color: var(--color-primary-dark);
     }
   }
+
+  &--cta {
+    &:link,
+    &:visited {
+      grid-column: 1/-1;
+      text-align: center;
+    }
+  }
 }
 
 .u-margin-bottom-2 {
