@@ -1,0 +1,3 @@
+Temat: Maps
+
+Maps - struktura danych która jest bardzo podobna do obiektów, ale kluczami może być cokolwiek. Nie mamy ograniczeń w sposobie posiadania klucza.

@@ -1,0 +1,7 @@
+Temat: Set
+
+Set - struktura danych która gromadzi unikalne wartości.
+Przydatna do używania tam gdzie potzrebujemy mieć unikalne wartości..
+Jest to iterable struktura danych podobna do tablicy, ale nie ma jej metod, więc warto zamienić potem na tablicę.
+
+Nie posiada metod tablicowych, ale posiada swoje własne, /set,has/...
