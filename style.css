@@ -14,11 +14,11 @@ body {
 }
 
 h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 p {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -38,12 +38,16 @@ ul {
   gap: 1rem;
 }
 
+ul:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
 a:link,
 a:visited {
   display: inline-block;
   text-decoration: none;
   font-size: 1.1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: #fff;
   border-radius: 9px;
   transition: 0.3s;
