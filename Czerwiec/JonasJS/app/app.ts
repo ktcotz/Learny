@@ -1,291 +1,62 @@
-/* 
-  GLOBAL_TYPES
-*/
+// Default parameters
 
-enum ProjectStatus {
-  Active,
-  Finished,
-}
-
-class Project {
-  constructor(
-    public id: string,
-    public title: string,
-    public description: string,
-    public people: number,
-    public status: ProjectStatus
-  ) {}
-}
-
-type Listener<T> = (items: T[]) => void;
-
-/* 
-  GLOBAL_STATE
-*/
-
-class State<T> {
-  protected listeners: Listener<T>[] = [];
-
-  addListener(listener: Listener<T>) {
-    this.listeners.push(listener);
-  }
-}
-
-class ProjectState extends State<Project> {
-  private projects: Project[] = [];
-  private static instance: ProjectState;
-
-  private constructor() {
-    super();
-  }
-
-  static getInstance() {
-    if (this.instance) {
-      return this.instance;
-    }
-
-    this.instance = new ProjectState();
-    return this.instance;
-  }
-
-  addProject(title: string, description: string, numOfPeople: number) {
-    const newProject = new Project(
-      Math.random().toString(),
-      title,
-      description,
-      numOfPeople,
-      ProjectStatus.Active
-    );
-
-    this.projects.push(newProject);
-
-    for (const listener of this.listeners) {
-      listener([...this.projects]);
-    }
-  }
-}
-
-/*
-  TEMPLATE_PARENT_CLASS
-*/
-
-abstract class Template<T extends HTMLElement, U extends HTMLElement> {
-  templateElement: HTMLTemplateElement | null;
-  hostElement: U | null;
-  element: T | null;
-
-  constructor(
-    templateID: string,
-    hostElementID: string,
-    insertAtStart: boolean,
-    newElementID?: string
-  ) {
-    this.templateElement = document.querySelector(`#${templateID}`);
-    this.hostElement = document.querySelector(`#${hostElementID}`);
-
-    const importedNode = document.importNode(
-      this.templateElement!.content,
-      true
-    );
-
-    this.element = <T>importedNode.firstElementChild;
-
-    if (newElementID) {
-      this.element.id = newElementID;
-    }
-
-    this.attach(insertAtStart);
-  }
-
-  private attach(insertAtStart: boolean) {
-    if (!this.hostElement || !this.element) return;
-
-    this.hostElement.insertAdjacentElement(
-      insertAtStart ? "afterbegin" : "beforeend",
-      this.element
-    );
-  }
-
-  abstract configure(): void;
-  abstract renderContent(): void;
-}
-
-class ProjectList extends Template<HTMLUListElement, HTMLDivElement> {
-  assignedProjects: Project[] = [];
-
-  constructor(private type: "active" | "finished") {
-    super("project-list", "app", false, `${type}-projects`);
-
-    this.configure();
-    this.renderContent();
-  }
-
-  configure() {
-    projectState.addListener((projects: Project[]) => {
-      this.assignedProjects = projects.filter((project) => {
-        if (this.type === "active") {
-          return project.status === ProjectStatus.Active;
-        }
-
-        return project.status === ProjectStatus.Finished;
-      });
-      this.renderProjects();
-    });
-  }
-
-  private renderProjects() {
-    const listEl = document.getElementById(`${this.type}-projects-list`);
-
-    if (!listEl) return;
-
-    listEl.innerHTML = "";
-
-    for (const project of this.assignedProjects) {
-      const listItem = document.createElement("li");
-      listItem.textContent = project.title;
-      listEl?.appendChild(listItem);
-    }
-  }
-
-  renderContent() {
-    const listId = `${this.type}-projects-list`;
-    const ul = this.element?.querySelector("ul");
-    const h2 = this.element?.querySelector("h2");
-
-    if (!ul || !h2) return;
-
-    ul.id = listId;
-    h2.textContent = `${this.type.toUpperCase()} PROJECTS`;
-  }
-}
-
-class ProjectInput extends Template<HTMLFormElement, HTMLDivElement> {
-  titleInputElement: HTMLInputElement | null = null;
-  descriptionInputElement: HTMLInputElement | null = null;
-  peopleInputElement: HTMLInputElement | null = null;
-
-  constructor() {
-    super("project-input", "app", true, "user-input");
-
-    this.titleInputElement =
-      this.element!.querySelector<HTMLInputElement>("#title");
-    this.descriptionInputElement =
-      this.element!.querySelector<HTMLInputElement>("#description");
-    this.peopleInputElement =
-      this.element!.querySelector<HTMLInputElement>("#people");
-
-    this.configure();
-  }
-
-  configure() {
-    this.element?.addEventListener("submit", this.submitHandler.bind(this));
-  }
-
-  renderContent() {}
-
-  private gatherUserInput() {
-    const enteredTitle = this.titleInputElement?.value;
-    const enteredDescription = this.descriptionInputElement?.value;
-    const enteredPeople = this.peopleInputElement?.value;
-
-    const titleValidatable: Validation = {
-      value: enteredTitle,
-      required: true,
-    };
-
-    const descriptionValidatable: Validation = {
-      value: enteredDescription,
-      required: true,
-      minLength: 5,
-    };
-
-    const peopleValidatable: Validation = {
-      value: Number(enteredPeople),
-      required: true,
-      min: 1,
-      max: 5,
-    };
-
-    if (
-      !validate(titleValidatable) ||
-      !validate(descriptionValidatable) ||
-      !validate(peopleValidatable)
-    ) {
-      return alert("Invalid input, please try again!");
-    }
-
-    return [enteredTitle, enteredDescription, Number(enteredPeople)];
-  }
-
-  private submitHandler(ev: Event) {
-    ev.preventDefault();
-    const userInput = this.gatherUserInput();
-
-    if (Array.isArray(userInput)) {
-      const [title, desc, people] = userInput;
-
-      console.log(userInput);
-
-      projectState.addProject(String(title), String(desc), Number(people));
-    }
-  }
-}
-
-/* 
-  VALIDATION 
-*/
-
-interface Validation {
-  value?: string | number;
-  required?: boolean;
-  minLength?: number;
-  maxLength?: number;
-  min?: number;
-  max?: number;
-}
-
-const validate = (validatableInput: Validation) => {
-  if (!validatableInput.value) return false;
-
-  let isValid = true;
-  if (validatableInput.required) {
-    isValid = isValid && validatableInput.value.toString().trim().length !== 0;
-  }
-
-  if (
-    validatableInput.minLength != null &&
-    typeof validatableInput.value === "string"
-  ) {
-    isValid =
-      isValid && validatableInput.value.length >= validatableInput.minLength;
-  }
-
-  if (
-    validatableInput.maxLength != null &&
-    typeof validatableInput.value === "string"
-  ) {
-    isValid =
-      isValid && validatableInput.value.length <= validatableInput.maxLength;
-  }
-
-  if (
-    validatableInput.min != null &&
-    typeof validatableInput.value === "number"
-  ) {
-    isValid = isValid && validatableInput.value >= validatableInput.min;
-  }
-
-  if (
-    validatableInput.max != null &&
-    typeof validatableInput.value === "number"
-  ) {
-    isValid = isValid && validatableInput.value <= validatableInput.max;
-  }
-
-  return isValid;
+const printName = (name: string = "Anonymous") => {
+  console.log(`Hi i'm ${name}`);
 };
 
-const projectState = ProjectState.getInstance();
-new ProjectInput();
-new ProjectList("active");
-new ProjectList("finished");
+// Pass by reference | value
+
+const flight = "LH234";
+const jonas = {
+  name: "Jonas Schmedtmann",
+  passport: 24739479284,
+};
+
+const checkIn = (flightNum, passenger) => {
+  flightNum = "LH999";
+  passenger.name = `Mr ${passenger.name}`;
+
+  if (passenger.passport === 24739479284) {
+    alert("correct");
+  } else {
+    alert("Wrong passwport");
+  }
+};
+
+// checkIn(flight, { ...jonas });
+
+// Call, apply, bind
+
+const lufthansa = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+
+  book(name: string) {
+    console.log(`${name} :)`);
+    this.bookings.push(name);
+  },
+};
+
+lufthansa.book("Kamil");
+
+const eurowings = {
+  airline: "Eurowings",
+  iataCode: "EW",
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+book.call(lufthansa, "Adamek");
+book.call(eurowings, "Martyna");
+book.apply(lufthansa, ["Adamek"]);
+
+const booked = book.bind(eurowings);
+booked("Adaśko");
+
+/* 
+  Call - łączy this z obiektem i umożlwiia podanie argumentów jako wartości
+  Apply - łączy this z obiektem i umożliwia podanie argumentów jako tablica.
+  Bind - łączy this z obiektem i umożliwia używanie funkcji jako metody tego obiektu.
+*/
