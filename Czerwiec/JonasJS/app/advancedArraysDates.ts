@@ -9,14 +9,30 @@ type Account = {
   pin: number;
   username?: string;
   balance?: number;
+  movementsDates: string[];
+  currency: string;
+  locale: string;
 };
 
 // Data
 const account1: Account = {
   owner: "Jonas Schmedtmann",
-  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
   interestRate: 1.2, // %
   pin: 1111,
+
+  movementsDates: [
+    "2019-11-18T21:31:17.178Z",
+    "2019-12-23T07:42:02.383Z",
+    "2020-01-28T09:15:04.904Z",
+    "2020-04-01T10:17:24.185Z",
+    "2020-05-08T14:11:59.604Z",
+    "2020-07-26T17:01:17.194Z",
+    "2020-07-28T23:36:17.929Z",
+    "2020-08-01T10:51:36.790Z",
+  ],
+  currency: "EUR",
+  locale: "pt-PT", // de-DE
 };
 
 const account2: Account = {
@@ -24,24 +40,22 @@ const account2: Account = {
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
+
+  movementsDates: [
+    "2019-11-01T13:15:33.035Z",
+    "2019-11-30T09:48:16.867Z",
+    "2019-12-25T06:04:23.907Z",
+    "2020-01-25T14:18:46.235Z",
+    "2020-02-05T16:33:06.386Z",
+    "2020-04-10T14:43:26.374Z",
+    "2020-06-25T18:49:59.371Z",
+    "2020-07-26T12:01:20.894Z",
+  ],
+  currency: "USD",
+  locale: "en-US",
 };
 
-const account3: Account = {
-  owner: "Steven Thomas Williams",
-  movements: [200, -200, 340, -300, -20, 50, 400, -460],
-  interestRate: 0.7,
-  pin: 3333,
-};
-
-const account4: Account = {
-  owner: "Sarah Smith",
-  movements: [430, 1000, 700, 50, 90],
-  interestRate: 1,
-  pin: 4444,
-};
-
-const accounts: Account[] = [account1, account2, account3, account4];
-
+const accounts = [account1, account2];
 // Elements
 const labelWelcome = document.querySelector(".welcome");
 const labelDate = document.querySelector(".date");
@@ -111,12 +125,21 @@ const displayMovements = (user: Account, sort: boolean = global_sort) => {
   movements.forEach((movement, id) => {
     const movementType = movement < 0 ? "withdrawal" : "deposit";
 
+    const movementDate = new Date(user.movementsDates[id]);
+    const date = new Intl.DateTimeFormat(user.locale).format(movementDate);
+
+    const formattedMov = new Intl.NumberFormat(user.locale, {
+      currency: user.currency,
+      style: "currency",
+    }).format(movement);
+
     const movementHTML = /* HTML */ `
       <div class="movements__row">
         <div class="movements__type movements__type--${movementType}">
           ${id + 1} ${movementType}
         </div>
-        <div class="movements__value">${movement}€</div>
+        <div class="movements__date">${date}</div>
+        <div class="movements__value">${formattedMov}</div>
       </div>
     `;
 
@@ -143,7 +166,7 @@ const calculateUserBalance = (user: Account) => {
 
   user.balance = balance;
 
-  labelBalance.textContent = `${balance}€`;
+  labelBalance.textContent = `${balance.toFixed(2)}€`;
 };
 
 const calculateDisplaySummary = (user: Account) => {
@@ -157,9 +180,9 @@ const calculateDisplaySummary = (user: Account) => {
       .filter((mov) => mov >= 1)
   );
 
-  labelSumIn.textContent = `${incomes}€`;
-  labelSumOut.textContent = `${Math.abs(outcomes)}€`;
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
+  labelSumOut.textContent = `${Math.abs(outcomes).toFixed(2)}€`;
+  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 };
 
 const login = () => {
@@ -196,7 +219,9 @@ const transferMoney = () => {
   if (Number(user.balance) < amount) return;
 
   user.movements.push(-amount);
+  user.movementsDates.push(new Date().toISOString());
   receiver.movements.push(amount);
+  receiver.movementsDates.push(new Date().toISOString());
 
   updateUI();
   clearInputs([inputTransferAmount, inputTransferTo]);
@@ -234,6 +259,7 @@ const loanAmount = () => {
   if (!valid) return;
 
   user.movements.push(amount);
+  user.movementsDates.push(new Date().toISOString());
 
   clearInputs([inputLoanAmount]);
   updateUI();
@@ -247,6 +273,29 @@ const sortMovements = () => {
   displayMovements(user, global_sort);
 };
 
+const startTimer = () => {
+  if (!labelTimer) return;
+
+  const tick = () => {
+    const min = String(Math.floor(time / 60)).padStart(2, "0");
+    const sec = String(time % 60).padStart(2, "0");
+
+    labelTimer.textContent = `${min}:${sec}`;
+
+    if (time === 0) {
+      hideScreen();
+      return clearInterval(timer);
+    }
+
+    time--;
+  };
+
+  let time = 5;
+
+  tick();
+  const timer = setInterval(tick, 1000);
+};
+
 const showScreen = () => {
   if (!containerApp || !user) return;
 
@@ -255,6 +304,20 @@ const showScreen = () => {
   if (!labelWelcome) return;
 
   labelWelcome.textContent = `Welcome back, ${user.owner}`;
+
+  if (!labelDate) return;
+
+  const date = new Intl.DateTimeFormat(user.locale, {
+    hour: "numeric",
+    minute: "numeric",
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+  }).format(new Date());
+
+  labelDate.textContent = date;
+
+  startTimer();
 };
 
 const hideScreen = () => {
