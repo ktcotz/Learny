@@ -2,6 +2,17 @@
   GLOBAL_TYPES
 */
 
+interface Draggable {
+  dragStartHandler(event: DragEvent): void;
+  dragEndHandler(event: DragEvent): void;
+}
+
+interface DragTarget {
+  dragOverHandler(event: DragEvent): void;
+  dropHandler(event: DragEvent): void;
+  dragLeaveHandler(event: DragEvent): void;
+}
+
 enum ProjectStatus {
   Active,
   Finished,
@@ -31,6 +42,9 @@ class State<T> {
   }
 }
 
+/* 
+  PROJECT_STATE
+*/
 class ProjectState extends State<Project> {
   private projects: Project[] = [];
   private static instance: ProjectState;
@@ -59,6 +73,20 @@ class ProjectState extends State<Project> {
 
     this.projects.push(newProject);
 
+    this.updateListeners();
+  }
+
+  moveProject(projectId: string, newStatus: ProjectStatus) {
+    const project = this.projects.find((project) => project.id === projectId);
+
+    if (project) {
+      project.status = newStatus;
+    }
+
+    this.updateListeners();
+  }
+
+  private updateListeners() {
     for (const listener of this.listeners) {
       listener([...this.projects]);
     }
@@ -110,7 +138,10 @@ abstract class Template<T extends HTMLElement, U extends HTMLElement> {
   abstract renderContent(): void;
 }
 
-class ProjectList extends Template<HTMLUListElement, HTMLDivElement> {
+class ProjectList
+  extends Template<HTMLUListElement, HTMLDivElement>
+  implements DragTarget
+{
   assignedProjects: Project[] = [];
 
   constructor(private type: "active" | "finished") {
@@ -121,6 +152,13 @@ class ProjectList extends Template<HTMLUListElement, HTMLDivElement> {
   }
 
   configure() {
+    this.element?.addEventListener("dragover", this.dragOverHandler.bind(this));
+    this.element?.addEventListener(
+      "dragleave",
+      this.dragLeaveHandler.bind(this)
+    );
+    this.element?.addEventListener("drop", this.dropHandler.bind(this));
+
     projectState.addListener((projects: Project[]) => {
       this.assignedProjects = projects.filter((project) => {
         if (this.type === "active") {
@@ -133,6 +171,28 @@ class ProjectList extends Template<HTMLUListElement, HTMLDivElement> {
     });
   }
 
+  dragLeaveHandler(event: DragEvent): void {
+    const listEl = this.element?.querySelector("ul")!;
+    listEl.classList.remove("droppable");
+  }
+
+  dragOverHandler(event: DragEvent): void {
+    if (event.dataTransfer && event.dataTransfer.types[0] === "text/plain") {
+      event.preventDefault();
+      const listEl = this.element?.querySelector("ul")!;
+      listEl.classList.add("droppable");
+    }
+  }
+
+  dropHandler(event: DragEvent): void {
+    const prjId = event.dataTransfer!.getData("text/plain");
+
+    projectState.moveProject(
+      prjId,
+      this.type === "active" ? ProjectStatus.Active : ProjectStatus.Finished
+    );
+  }
+
   private renderProjects() {
     const listEl = document.getElementById(`${this.type}-projects-list`);
 
@@ -141,9 +201,7 @@ class ProjectList extends Template<HTMLUListElement, HTMLDivElement> {
     listEl.innerHTML = "";
 
     for (const project of this.assignedProjects) {
-      const listItem = document.createElement("li");
-      listItem.textContent = project.title;
-      listEl?.appendChild(listItem);
+      new ProjectItem(this.element!.querySelector("ul")!.id, project);
     }
   }
 
@@ -158,6 +216,64 @@ class ProjectList extends Template<HTMLUListElement, HTMLDivElement> {
     h2.textContent = `${this.type.toUpperCase()} PROJECTS`;
   }
 }
+
+/*
+  PROJECT_ITEM
+*/
+
+class ProjectItem
+  extends Template<HTMLUListElement, HTMLDivElement>
+  implements Draggable
+{
+  private project: Project;
+
+  get persons() {
+    if (this.project.people === 1) {
+      return "1 person";
+    }
+
+    return `${this.project.people} persons`;
+  }
+
+  constructor(public hostID: string, project: Project) {
+    super("single-project", hostID, false, project.id);
+    this.project = project;
+
+    this.configure();
+    this.renderContent();
+  }
+
+  configure() {
+    this.element?.addEventListener(
+      "dragstart",
+      this.dragStartHandler.bind(this)
+    );
+    this.element?.addEventListener("dragend", this.dragEndHandler.bind(this));
+  }
+
+  renderContent() {
+    const title = this.element?.querySelector("h2");
+    const persons = this.element?.querySelector("h3");
+    const description = this.element?.querySelector("p");
+
+    if (!title || !persons || !description) return;
+
+    title.textContent = this.project.title;
+    persons.textContent = `${this.persons} assigned`;
+    description.textContent = this.project.description;
+  }
+
+  dragStartHandler(event: DragEvent): void {
+    event.dataTransfer!.setData("text/plain", this.project.id);
+    event.dataTransfer!.effectAllowed = "move";
+  }
+
+  dragEndHandler(event: DragEvent): void {}
+}
+
+/*
+  PROJECT_INPUT
+*/
 
 class ProjectInput extends Template<HTMLFormElement, HTMLDivElement> {
   titleInputElement: HTMLInputElement | null = null;
