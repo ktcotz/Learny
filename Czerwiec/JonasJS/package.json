@@ -6,7 +6,10 @@
   "version": "1.0.0",
   "description": "Start nauki z kursem JS od Jonassa Schmedtmanna, za namową doświadczonych developerów, pracę zaczynam od nauki także Typescriptu.",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/leaflet": "^1.9.12",
+    "leaflet": "^1.9.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile:ts": "tsc ./app/app.ts  --watch"
