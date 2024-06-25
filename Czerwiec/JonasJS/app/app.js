@@ -70,6 +70,50 @@ var inputDistance = document.querySelector(".form__input--distance");
 var inputDuration = document.querySelector(".form__input--duration");
 var inputCadence = document.querySelector(".form__input--cadence");
 var inputElevation = document.querySelector(".form__input--elevation");
+var Workout = /** @class */ (function () {
+    function Workout(coords, distance, duration) {
+        this.coords = coords;
+        this.distance = distance;
+        this.duration = duration;
+        this.date = new Date();
+        this.id = (Date.now() + "").slice(-10);
+    }
+    return Workout;
+}());
+var Running = /** @class */ (function (_super) {
+    __extends(Running, _super);
+    function Running(coords, distance, duration, cadence) {
+        var _this = _super.call(this, coords, distance, duration) || this;
+        _this.coords = coords;
+        _this.distance = distance;
+        _this.duration = duration;
+        _this.cadence = cadence;
+        _this.calcPace();
+        return _this;
+    }
+    Running.prototype.calcPace = function () {
+        this.pace = this.duration / this.distance;
+        return this.pace;
+    };
+    return Running;
+}(Workout));
+var Cycling = /** @class */ (function (_super) {
+    __extends(Cycling, _super);
+    function Cycling(coords, distance, duration, elevationGain) {
+        var _this = _super.call(this, coords, distance, duration) || this;
+        _this.coords = coords;
+        _this.distance = distance;
+        _this.duration = duration;
+        _this.elevationGain = elevationGain;
+        _this.calcSpeed();
+        return _this;
+    }
+    Cycling.prototype.calcSpeed = function () {
+        this.speed = this.distance / (this.duration / 60);
+        return this.speed;
+    };
+    return Cycling;
+}(Workout));
 var UI = /** @class */ (function () {
     function UI() {
         this.mapElement = document.querySelector("#map");

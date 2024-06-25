@@ -30,6 +30,57 @@ const inputElevation = document.querySelector<HTMLInputElement>(
   ".form__input--elevation"
 );
 
+class Workout {
+  date = new Date();
+  id = (Date.now() + "").slice(-10);
+
+  constructor(
+    protected coords: number[],
+    protected distance: number,
+    protected duration: number
+  ) {}
+
+  
+}
+
+class Running extends Workout {
+  pace!: number;
+  constructor(
+    protected coords: number[],
+    protected distance: number,
+    protected duration: number,
+    protected cadence: number
+  ) {
+    super(coords, distance, duration);
+
+    this.calcPace();
+  }
+
+  calcPace() {
+    this.pace = this.duration / this.distance;
+    return this.pace;
+  }
+}
+
+class Cycling extends Workout {
+  speed!: number;
+  constructor(
+    protected coords: number[],
+    protected distance: number,
+    protected duration: number,
+    protected elevationGain: number
+  ) {
+    super(coords, distance, duration);
+
+    this.calcSpeed();
+  }
+
+  calcSpeed() {
+    this.speed = this.distance / (this.duration / 60);
+    return this.speed;
+  }
+}
+
 class UI {
   mapElement = document.querySelector<HTMLDivElement>("#map");
 
