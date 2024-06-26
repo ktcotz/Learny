@@ -49,20 +49,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-];
 var form = document.querySelector(".form");
 var containerWorkouts = document.querySelector(".workouts");
 var inputType = document.querySelector(".form__input--type");
@@ -78,6 +64,23 @@ var Workout = /** @class */ (function () {
         this.date = new Date();
         this.id = (Date.now() + "").slice(-10);
     }
+    Workout.prototype.setDescription = function () {
+        var months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+        this.description = "".concat(this.type[0].toUpperCase()).concat(this.type.slice(1), " on ").concat(months[this.date.getMonth()], " ").concat(this.date.getDate());
+    };
     return Workout;
 }());
 var Running = /** @class */ (function (_super) {
@@ -88,7 +91,9 @@ var Running = /** @class */ (function (_super) {
         _this.distance = distance;
         _this.duration = duration;
         _this.cadence = cadence;
+        _this.type = "running";
         _this.calcPace();
+        _this.setDescription();
         return _this;
     }
     Running.prototype.calcPace = function () {
@@ -105,7 +110,9 @@ var Cycling = /** @class */ (function (_super) {
         _this.distance = distance;
         _this.duration = duration;
         _this.elevationGain = elevationGain;
+        _this.type = "cycling";
         _this.calcSpeed();
+        _this.setDescription();
         return _this;
     }
     Cycling.prototype.calcSpeed = function () {
@@ -196,21 +203,20 @@ var MaptyMap = /** @class */ (function (_super) {
             maxZoom: this.mapOptions.maxZoom,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(this.map);
-        this.addMarker(this.coords, "Custom Marker!");
         this.addEventListeners();
     };
-    MaptyMap.prototype.addMarker = function (position, content) {
+    MaptyMap.prototype.addMarker = function (workout) {
         if (!this.map)
             return;
-        L.marker(position)
+        L.marker(workout.coords)
             .addTo(this.map)
             .bindPopup(L.popup({
             maxWidth: 250,
             minWidth: 100,
             autoClose: false,
             closeOnClick: false,
-            className: "running-popup",
-            content: content,
+            className: "".concat(workout.type, "-popup"),
+            content: "".concat(workout.description),
         }))
             .openPopup();
     };
@@ -270,6 +276,7 @@ var App = /** @class */ (function () {
     function App() {
         this.mapty_map = new MaptyMap();
         this.ui = new UI();
+        this.workouts = [];
         this.initialize();
     }
     App.prototype.initialize = function () {
@@ -280,12 +287,52 @@ var App = /** @class */ (function () {
         var _this = this;
         form === null || form === void 0 ? void 0 : form.addEventListener("submit", function (ev) {
             ev.preventDefault();
-            _this.mapty_map.addMarker(_this.mapty_map.coords, "COSIEK!");
+            _this.addWorkout();
             _this.ui.hideError();
         });
         inputType === null || inputType === void 0 ? void 0 : inputType.addEventListener("change", function () {
             _this.ui.toggleElevationField();
         });
+    };
+    App.prototype.addWorkout = function () {
+        var validInputs = function (inputs) {
+            return inputs.every(function (input) { return Number.isFinite(input); });
+        };
+        var positiveInputs = function (inputs) {
+            return inputs.every(function (input) { return input > 0; });
+        };
+        var type = inputType === null || inputType === void 0 ? void 0 : inputType.value;
+        var distance = Number(inputDistance === null || inputDistance === void 0 ? void 0 : inputDistance.value);
+        var duration = Number(inputDuration === null || inputDuration === void 0 ? void 0 : inputDuration.value);
+        var additional = type === "running"
+            ? Number(inputCadence === null || inputCadence === void 0 ? void 0 : inputCadence.value)
+            : Number(inputElevation === null || inputElevation === void 0 ? void 0 : inputElevation.value);
+        if (!validInputs([distance, duration, additional]) ||
+            !positiveInputs([distance, duration, additional])) {
+            return alert("Inputs have to be positive number!");
+        }
+        var workout = type === "running"
+            ? new Running(this.mapty_map.coords, distance, duration, additional)
+            : new Cycling(this.mapty_map.coords, distance, duration, additional);
+        this.workouts.push(workout);
+        this.renderWorkout(workout);
+        this.mapty_map.addMarker(workout);
+        this.ui.clearInputs([
+            inputDistance,
+            inputDuration,
+            inputCadence,
+            inputElevation,
+        ]);
+    };
+    App.prototype.renderWorkout = function (workout) {
+        var html = /* HTML */ "\n      <li class=\"workout workout--".concat(workout.type, "\" data-id=\"").concat(workout.id, "\">\n        <h2 class=\"workout__title\">").concat(workout.description, "</h2>\n        <div class=\"workout__details\">\n          <span class=\"workout__icon\">\n            ").concat(workout.type === "running" ? "🏃‍♂️" : "🚴‍♀️", "</span\n          >\n          <span class=\"workout__value\">").concat(workout.distance, "</span>\n          <span class=\"workout__unit\">km</span>\n        </div>\n        <div class=\"workout__details\">\n          <span class=\"workout__icon\">\u23F1</span>\n          <span class=\"workout__value\">").concat(workout.distance, "</span>\n          <span class=\"workout__unit\">min</span>\n        </div>\n        ").concat(workout.type === "running"
+            ? /* HTML */ "<div class=\"workout__details\">\n                <span class=\"workout__icon\">\u26A1\uFE0F</span>\n                <span class=\"workout__value\"\n                  >".concat(workout instanceof Running ? workout.pace : 0, "</span\n                >\n                <span class=\"workout__unit\">min/km</span>\n              </div>\n              <div class=\"workout__details\">\n                <span class=\"workout__icon\">\uD83E\uDDB6\uD83C\uDFFC</span>\n                <span class=\"workout__value\"\n                  >").concat(workout instanceof Running ? workout.cadence : 0, "</span\n                >\n                <span class=\"workout__unit\">spm</span>\n              </div>")
+            : null, "\n        ").concat(workout.type === "cycling"
+            ? /* HTML */ " <div class=\"workout__details\">\n                <span class=\"workout__icon\">\u26A1\uFE0F</span>\n                <span class=\"workout__value\"\n                  >".concat(workout instanceof Cycling ? workout.speed : 0, "</span\n                >\n                <span class=\"workout__unit\">km/h</span>\n              </div>\n              <div class=\"workout__details\">\n                <span class=\"workout__icon\">\u26F0</span>\n                <span class=\"workout__value\"\n                  >").concat(workout instanceof Cycling
+                ? workout.elevationGain
+                : 0, "</span\n                >\n                <span class=\"workout__unit\">m</span>\n              </div>")
+            : null, "\n      </li>\n    ");
+        form === null || form === void 0 ? void 0 : form.insertAdjacentHTML("afterend", html);
     };
     return App;
 }());
