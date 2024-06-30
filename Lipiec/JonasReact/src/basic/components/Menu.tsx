@@ -5,10 +5,13 @@ export const Menu = () => {
   const pizzas = pizzaData;
 
   return (
-    <div className="menu">
+    <main className="menu">
       <h2>Our menu</h2>
-
-      <MenuDetails pizzas={pizzas} />
-    </div>
+      {pizzas.length > 0 ? (
+        <MenuDetails pizzas={pizzas} />
+      ) : (
+        <p>We're still working on our menu. Please come back later :)</p>
+      )}
+    </main>
   );
 };
