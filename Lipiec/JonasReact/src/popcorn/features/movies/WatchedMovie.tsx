@@ -8,6 +8,10 @@ export type WatchedMovieData = {
   userRating: number;
 };
 
+type WatchedMovieProps = {
+  onDelete: (id: string) => void;
+};
+
 export const WatchedMovie = ({
   imdbID,
   Poster,
@@ -15,7 +19,8 @@ export const WatchedMovie = ({
   imdbRating,
   userRating,
   runtime,
-}: WatchedMovieData) => {
+  onDelete,
+}: WatchedMovieData & WatchedMovieProps) => {
   return (
     <li key={imdbID}>
       <img src={Poster} alt={`${Title} poster`} />
@@ -33,6 +38,10 @@ export const WatchedMovie = ({
           <span>⏳</span>
           <span>{runtime} min</span>
         </p>
+
+        <button className="btn-delete" onClick={() => onDelete(imdbID)}>
+          X
+        </button>
       </div>
     </li>
   );
