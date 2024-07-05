@@ -13,6 +13,7 @@ import Error from "./advanced/quiz/components/Error";
 import { StartScreen } from "./advanced/quiz/layout/StartScreen";
 import { QuestionScreen } from "./advanced/quiz/layout/QuestionScreen";
 import { NextButton } from "./advanced/quiz/components/NextButton";
+import { Progress } from "./advanced/quiz/components/Progress";
 
 const quizReducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -85,6 +86,11 @@ export const App = () => {
         )}
         {state.status === AppStatus.ACTIVE && (
           <>
+            <Progress
+              questions={state.questions}
+              currentQuestion={state.index}
+              points={state.points}
+            />
             <QuestionScreen
               question={state.questions[state.index]}
               dispatch={dispatch}
