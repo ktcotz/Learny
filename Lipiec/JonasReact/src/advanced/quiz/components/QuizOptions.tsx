@@ -1,23 +1,31 @@
 import { Action, QuizGame } from "../reducer/types";
+import { QuestionData } from "./Question";
 
 type QuizOptionsProps = {
-  options: string[];
+  question: QuestionData;
   dispatch: React.Dispatch<Action>;
   answer: number | null;
 };
 
 export const QuizOptions = ({
-  options,
+  question,
   dispatch,
   answer,
 }: QuizOptionsProps) => {
   return (
     <div className="options">
-      {options.map((option, i) => {
+      {question.options.map((option, i) => {
         return (
           <button
-            className={`btn btn-option ${i === answer ? "answer" : ""}`}
+            className={`btn btn-option ${i === answer ? "answer" : ""} ${
+              answer !== null
+                ? i === question.correctOption
+                  ? "correct"
+                  : "wrong"
+                : ""
+            }`}
             key={option}
+            disabled={answer !== null}
             onClick={() => dispatch({ type: QuizGame.ANSWER, payload: i })}
           >
             {option}

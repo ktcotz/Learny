@@ -17,11 +17,7 @@ export const QuestionScreen = ({
     <div>
       <h4>{question.question}</h4>
 
-      <QuizOptions
-        options={question.options}
-        dispatch={dispatch}
-        answer={answer}
-      />
+      <QuizOptions question={question} dispatch={dispatch} answer={answer} />
     </div>
   );
 };

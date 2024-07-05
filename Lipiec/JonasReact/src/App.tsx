@@ -12,6 +12,7 @@ import Loader from "./advanced/quiz/components/Loader";
 import Error from "./advanced/quiz/components/Error";
 import { StartScreen } from "./advanced/quiz/layout/StartScreen";
 import { QuestionScreen } from "./advanced/quiz/layout/QuestionScreen";
+import { NextButton } from "./advanced/quiz/components/NextButton";
 
 const quizReducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -23,8 +24,21 @@ const quizReducer = (state: State, action: Action) => {
       return { ...state, status: AppStatus.ERROR };
     case QuizGame.ACTIVE:
       return { ...state, status: AppStatus.ACTIVE };
-    case QuizGame.ANSWER:
-      return { ...state, answer: action.payload };
+    case QuizGame.ANSWER: {
+      const currentQuestion = state.questions[state.index];
+
+      return {
+        ...state,
+        answer: action.payload,
+        points:
+          action.payload === currentQuestion.correctOption
+            ? state.points + currentQuestion.points
+            : state.points,
+      };
+    }
+
+    case QuizGame.NEXT_QUESTION:
+      return { ...state, index: state.index + 1, answer: null };
 
     default:
       return state;
@@ -36,6 +50,7 @@ const initialState: State = {
   status: AppStatus.LOADING,
   index: 0,
   answer: null,
+  points: 0,
 };
 
 export const App = () => {
@@ -69,11 +84,14 @@ export const App = () => {
           <StartScreen questions={state.questions} dispatch={dispatch} />
         )}
         {state.status === AppStatus.ACTIVE && (
-          <QuestionScreen
-            question={state.questions[state.index]}
-            dispatch={dispatch}
-            answer={state.answer}
-          />
+          <>
+            <QuestionScreen
+              question={state.questions[state.index]}
+              dispatch={dispatch}
+              answer={state.answer}
+            />
+            <NextButton dispatch={dispatch} answer={state.answer} />
+          </>
         )}
       </Main>
     </div>
