@@ -1,15 +1,16 @@
 import { Marker, Popup } from "react-leaflet";
-import { Position } from "../cities/city/City";
+import { CityData } from "../cities/city/City";
 
 type MapMarkerProps = {
-  mapPosition: Position;
+  city: CityData;
 };
 
-export const MapMarker = ({ mapPosition }: MapMarkerProps) => {
+export const MapMarker = ({ city }: MapMarkerProps) => {
   return (
-    <Marker position={[mapPosition.lat, mapPosition.lng]}>
+    <Marker position={[city.position.lat, city.position.lng]}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
+        <span>{city.emoji} </span>
+        <span>{city.cityName} </span>
       </Popup>
     </Marker>
   );

@@ -1,6 +1,6 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "./Map.module.css";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { LatLngTuple } from "leaflet";
 import { MapMarker } from "./MapMarker";
@@ -16,15 +16,31 @@ export const Map = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const position = [Number(lat), Number(lng)] as LatLngTuple;
-    setMapPosition(position);
+    if (lat && lng) {
+      const position = [Number(lat), Number(lng)] as LatLngTuple;
+      setMapPosition(position);
+    }
   }, [lat, lng]);
+
+  const ChangeCenter = () => {
+    const map = useMap();
+    map.setView(mapPosition);
+    return null;
+  };
+
+  const DetectClick = () => {
+    useMapEvents({
+      click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    });
+
+    return null;
+  };
 
   return (
     <div className={styled.mapContainer}>
       <MapContainer
         center={mapPosition}
-        zoom={13}
+        zoom={6}
         tap={true}
         scrollWheelZoom={true}
         className={styled.map}
@@ -34,8 +50,10 @@ export const Map = () => {
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
         {cities.map((city) => (
-          <MapMarker mapPosition={city.position} key={city.id} />
+          <MapMarker city={city} key={city.id} />
         ))}
+        <ChangeCenter />
+        <DetectClick />
       </MapContainer>
     </div>
   );
