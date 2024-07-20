@@ -1,7 +1,7 @@
 import { Outlet, useNavigation } from "react-router";
 import CartOverview from "../features/cart/CartOverview";
 import { Header } from "./Header";
-import Loader from "../../../builded/advanced/quiz/components/Loader";
+import { Loader } from "./Loader";
 
 export const AppLayout = () => {
   const navigation = useNavigation();
@@ -9,13 +9,15 @@ export const AppLayout = () => {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className="layout">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
 
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <div className="overflow-scroll">
+        <main className=" max-w-3xl  mx-auto">
+          <Outlet />
+        </main>
+      </div>
 
       <CartOverview />
     </div>

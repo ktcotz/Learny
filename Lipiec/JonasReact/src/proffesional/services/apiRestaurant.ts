@@ -1,4 +1,5 @@
 import { Pizza } from "../features/menu/MenuItem";
+import { OrderData } from "../features/order/Order";
 
 const API_URL = "https://react-fast-pizza-api.onrender.com/api";
 
@@ -21,7 +22,7 @@ export async function getOrder(id) {
   return data;
 }
 
-export async function createOrder(newOrder) {
+export async function createOrder(newOrder: string) {
   try {
     const res = await fetch(`${API_URL}/order`, {
       method: "POST",
@@ -33,7 +34,7 @@ export async function createOrder(newOrder) {
 
     if (!res.ok) throw Error();
     const { data } = await res.json();
-    return data;
+    return data as OrderData;
   } catch {
     throw Error("Failed creating your order");
   }
