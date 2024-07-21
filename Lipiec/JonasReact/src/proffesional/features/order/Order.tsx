@@ -1,14 +1,14 @@
 /* eslint-disable react-refresh/only-export-components */
 // Test ID: IIDSAT
 
-import { LoaderFunction, useLoaderData } from "react-router";
+import { LoaderFunction, Params, useLoaderData } from "react-router";
 import { getOrder } from "../../services/apiRestaurant";
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
 } from "./../../utils/helpers";
-import CartItem, { CartData } from "../cart/CartItem";
+import { CartData } from "../cart/CartItem";
 import OrderItem from "./OrderItem";
 
 export type OrderData = {
@@ -90,15 +90,11 @@ function Order() {
 }
 
 export type OrderParams = {
-  params: {
-    id: string;
-  };
+  params: Params<"id">;
 };
 
-export const loader: LoaderFunction = async ({
-  params: { id },
-}: OrderParams) => {
-  const order = await getOrder(id);
+export const loader: LoaderFunction = async ({ params }: OrderParams) => {
+  const order = await getOrder(params.id);
 
   return order;
 };

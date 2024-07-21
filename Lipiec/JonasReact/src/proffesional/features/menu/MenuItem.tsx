@@ -1,3 +1,4 @@
+import { useBoundStore } from "../../store/store";
 import { Button } from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
 
@@ -10,7 +11,30 @@ export type Pizza = {
   soldOut: boolean;
 };
 
-function MenuItem({ name, unitPrice, imageUrl, ingredients, soldOut }: Pizza) {
+function MenuItem({
+  id,
+  name,
+  unitPrice,
+  imageUrl,
+  ingredients,
+  soldOut,
+}: Pizza) {
+  const addItem = useBoundStore((state) => state.addItem);
+  const cart = useBoundStore((state) => state.cart);
+
+  const handleAddToCart = () => {
+    const item = {
+      pizzaId: String(id),
+      name,
+      quantity: 1,
+      unitPrice,
+      totalPrice: unitPrice * 1,
+    };
+
+    console.log(cart);
+    addItem(item);
+  };
+
   return (
     <li className="flex gap-4 py-2">
       <img
@@ -30,7 +54,11 @@ function MenuItem({ name, unitPrice, imageUrl, ingredients, soldOut }: Pizza) {
             <p className="uppercase font-medium text-stone-500">Sold out</p>
           )}
 
-          <Button modifier="small">Add to cart</Button>
+          {!soldOut ? (
+            <Button modifier="small" onClick={handleAddToCart}>
+              Add to cart
+            </Button>
+          ) : null}
         </div>
       </div>
     </li>

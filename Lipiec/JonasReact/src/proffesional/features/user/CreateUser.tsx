@@ -1,11 +1,19 @@
 import { FormEvent, useState } from "react";
 import { Button } from "../../ui/Button";
+import { useBoundStore } from "../../store/store";
+import { useNavigate } from "react-router";
 
 function CreateUser() {
+  const updateName = useBoundStore((state) => state.updateName);
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
+
+    updateName(username);
+    setUsername("");
+    navigate("/menu");
   }
 
   return (

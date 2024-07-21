@@ -2,12 +2,13 @@ import { Button } from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
 
 export type CartData = {
-  addIngredients: string[];
+  addIngredients?: string[];
+  name?: string;
   totalPrice: number;
   unitPrice: number;
   pizzaId: string;
   quantity: number;
-  removeIngredients: string[];
+  removeIngredients?: string[];
 };
 
 function CartItem({ item }) {
