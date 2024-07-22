@@ -1,3 +1,4 @@
+import { useBoundStore } from "../../store/store";
 import { Button } from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
 
@@ -12,6 +13,8 @@ export type CartData = {
 };
 
 function CartItem({ item }) {
+  const deleteItem = useBoundStore((state) => state.deleteItem);
+
   const { pizzaId, name, quantity, totalPrice } = item;
 
   return (
@@ -21,7 +24,9 @@ function CartItem({ item }) {
       </p>
       <div className="flex items-center justify-between sm:gap-6">
         <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
-        <Button modifier="small">Delete</Button>
+        <Button modifier="small" onClick={() => deleteItem(pizzaId)}>
+          Delete
+        </Button>
       </div>
     </li>
   );
