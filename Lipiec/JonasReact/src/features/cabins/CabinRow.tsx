@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { formatCurrency } from "../../utils/helpers";
+import { useDeleteCabin } from "./useDeleteCabin";
 
 const TableRow = styled.div`
   display: grid;
@@ -38,3 +40,35 @@ const Discount = styled.div`
   font-weight: 500;
   color: var(--color-green-700);
 `;
+
+export type CabinData = {
+  id: number;
+  created_at: string;
+  name: string;
+  maxCapacity: number;
+  regularPrice: number;
+  discount: number;
+  description: string;
+  image: string;
+};
+
+type CabinRowProps = {
+  cabin: CabinData;
+};
+
+export const CabinRow = ({ cabin }: CabinRowProps) => {
+  const { name, maxCapacity, regularPrice, discount, image, id } = cabin;
+  const { deleteMutation, isDeleting } = useDeleteCabin();
+  return (
+    <TableRow role="row">
+      <Img src={image} alt={name} />
+      <Cabin>{name}</Cabin>
+      <div>Fits up to {maxCapacity} guests</div>
+      <Price>{formatCurrency(regularPrice)}</Price>
+      <Discount>{formatCurrency(discount)}</Discount>
+      <button onClick={() => deleteMutation(id)} disabled={isDeleting}>
+        Delete
+      </button>
+    </TableRow>
+  );
+};
