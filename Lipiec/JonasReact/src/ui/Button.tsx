@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import styled, { css } from "styled-components";
 
 const sizes = {
@@ -49,8 +50,9 @@ const variations = {
 };
 
 type ButtonProps = {
-  variation: keyof typeof variations;
-  size: keyof typeof sizes;
+  variation?: keyof typeof variations;
+  size?: keyof typeof sizes;
+  children: ReactNode;
 };
 
 export const Button = styled.button<ButtonProps>`
@@ -58,8 +60,8 @@ export const Button = styled.button<ButtonProps>`
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
 
-  ${(props) => sizes[props.size]}
-  ${(props) => variations[props.variation]}
+  ${(props) => props.size && sizes[props.size]}
+  ${(props) => props.variation && variations[props.variation]}
 `;
 
 Button.defaultProps = {
