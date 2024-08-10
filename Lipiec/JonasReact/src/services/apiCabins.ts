@@ -21,9 +21,15 @@ export const deleteCabin = async ({ id }: { id: number }) => {
 };
 
 export const createCabin = async (newCabin: AddCabin) => {
+  const imageName = `${Math.random()}-${newCabin.image?.name}`.replace("/", "");
+
+  const imagePath = `${
+    import.meta.env.VITE_SUPABASE_URL
+  }/storage/v1/object/public/cabin-images/${imageName}`;
+
   const { data, error } = await supabase
     .from("cabins")
-    .insert([newCabin])
+    .insert([{ ...newCabin, image: imagePath }])
     .select();
 
   if (error) {

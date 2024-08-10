@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Input from "./Input";
 import { forwardRef, HTMLAttributes } from "react";
+import FileInput from "./FileInput";
 
 export const StyledFormRow = styled.div`
   display: grid;
@@ -49,12 +50,11 @@ export const FormRow = forwardRef<HTMLInputElement, FormRowProps>(
     return (
       <StyledFormRow>
         <Label htmlFor={id}>{label}</Label>
-        <Input
-          type={id === "image" ? "file" : "text"}
-          id={id}
-          ref={ref}
-          {...rest}
-        />
+        {id === "image" ? (
+          <FileInput type="file" id={id} ref={ref} {...rest} />
+        ) : (
+          <Input type="text" id={id} ref={ref} {...rest} />
+        )}
         {error && <Error>{error}</Error>}
       </StyledFormRow>
     );

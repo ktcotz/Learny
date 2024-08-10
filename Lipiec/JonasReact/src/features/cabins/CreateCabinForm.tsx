@@ -22,11 +22,14 @@ function CreateCabinForm() {
   const { add, isAdding } = useAddCabin();
 
   const submitHandler = (data: AddCabin) => {
-    add(data, {
-      onSuccess: () => {
-        reset();
-      },
-    });
+    add(
+      { ...data, image: data.image[0] },
+      {
+        onSuccess: () => {
+          // reset();
+        },
+      }
+    );
   };
 
   console.log(errors);
