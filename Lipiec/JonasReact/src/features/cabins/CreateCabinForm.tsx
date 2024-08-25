@@ -3,10 +3,17 @@ import { Button } from "../../ui/Button";
 import { useForm } from "react-hook-form";
 import { AddCabin, AddCabinSchema } from "./schema/AddCabinSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAddCabin } from "./useAddCabin";
+import { useAddEditCabin } from "./useAddCabin";
 import { FormRow, StyledFormRow } from "../../ui/FormRow";
+import { CabinData } from "./CabinRow";
 
-function CreateCabinForm() {
+type CreateCabinFormProps = {
+  cabinToEdit?: CabinData;
+};
+
+function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
+  const isEditSession = !!cabinToEdit;
+
   const {
     register,
     handleSubmit,
@@ -15,21 +22,35 @@ function CreateCabinForm() {
   } = useForm<AddCabin>({
     resolver: zodResolver(AddCabinSchema),
     defaultValues: {
-      image: "",
+      ...cabinToEdit,
     },
+    
   });
 
-  const { add, isAdding } = useAddCabin();
+  const { add, edit, isEditing, isAdding } = useAddEditCabin();
 
   const submitHandler = (data: AddCabin) => {
-    add(
-      { ...data, image: data.image[0] },
-      {
-        onSuccess: () => {
-          // reset();
-        },
-      }
-    );
+    const image = typeof data.image === "string" ? data.image : data.image[0];
+
+    if (isEditSession) {
+      edit(
+        { ...data, image, id: cabinToEdit.id },
+        {
+          onSuccess: () => {
+            reset();
+          },
+        }
+      );
+    } else {
+      add(
+        { ...data, image },
+        {
+          onSuccess: () => {
+            reset();
+          },
+        }
+      );
+    }
   };
 
   console.log(errors);
@@ -79,7 +100,9 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button disabled={isAdding}>Add cabin</Button>
+        <Button disabled={isAdding || isEditing}>
+          {isEditSession ? "Edit" : "Add"} cabin
+        </Button>
       </StyledFormRow>
     </Form>
   );
