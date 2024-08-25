@@ -24,9 +24,10 @@ export const createCabin = async ({
   id,
   ...newCabin
 }: AddCabin & { id?: number }) => {
-  const hasImagePath = id
-    ? newCabin?.image?.startsWith(import.meta.env.VITE_SUPABASE_URL)
-    : null;
+  const hasImagePath =
+    typeof newCabin.image === "string"
+      ? newCabin?.image?.startsWith(import.meta.env.VITE_SUPABASE_URL)
+      : null;
 
   const imageName = `${Math.random()}-${newCabin.image?.name}`.replace("/", "");
 
@@ -53,15 +54,15 @@ export const createCabin = async ({
     throw new Error(error.message);
   }
 
-  if (!id) {
-    const { error: storageError } = await supabase.storage
-      .from("cabin-images")
-      .upload(imageName, newCabin.image);
+  if (hasImagePath) return;
 
-    if (storageError) {
-      await supabase.from("cabins").delete().eq("id", data[0].id);
-      throw new Error("Something was wrong and we must deleted this record!");
-    }
+  const { error: storageError } = await supabase.storage
+    .from("cabin-images")
+    .upload(imageName, newCabin.image);
+
+  if (storageError) {
+    await supabase.from("cabins").delete().eq("id", data[0].id);
+    throw new Error("Something was wrong and we must deleted this record!");
   }
 
   return data;
