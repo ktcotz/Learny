@@ -65,6 +65,18 @@ export const CabinRow = ({ cabin }: CabinRowProps) => {
   const { name, maxCapacity, regularPrice, discount, image, id } = cabin;
   const { deleteMutation, isDeleting } = useDeleteCabin();
   const { add } = useAddEditCabin();
+
+  const handleDuplicate = () => {
+    add({
+      name: `Copy of ${cabin.name}`,
+      description: cabin.description,
+      discount: cabin.discount,
+      maxCapacity: cabin.maxCapacity,
+      regularPrice: cabin.regularPrice,
+      image: cabin.image,
+    });
+  };
+
   return (
     <>
       <TableRow role="row">
@@ -74,18 +86,7 @@ export const CabinRow = ({ cabin }: CabinRowProps) => {
         <Price>{formatCurrency(regularPrice)}</Price>
         <Discount>{formatCurrency(discount)}</Discount>
         <div>
-          <button
-            onClick={() =>
-              add({
-                name: `Copy of ${cabin.name}`,
-                description: cabin.description,
-                discount: cabin.discount,
-                maxCapacity: cabin.maxCapacity,
-                regularPrice: cabin.regularPrice,
-                image: cabin.image,
-              })
-            }
-          >
+          <button onClick={handleDuplicate}>
             <HiSquare2Stack />
           </button>
           <button onClick={() => setShowForm((prev) => !prev)}>
