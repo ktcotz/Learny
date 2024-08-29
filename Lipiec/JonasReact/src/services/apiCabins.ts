@@ -34,7 +34,7 @@ export const createCabin = async ({
   const imagePath = hasImagePath
     ? newCabin.image
     : `${
-        import.meta.env.VITE_SUPABASE_URL
+        import.meta!.env!.VITE_SUPABASE_URL
       }/storage/v1/object/public/cabin-images/${imageName}`;
 
   const query = !id

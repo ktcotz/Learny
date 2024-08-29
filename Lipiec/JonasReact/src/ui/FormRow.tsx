@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Input from "./Input";
-import { forwardRef, HTMLAttributes } from "react";
+import { forwardRef, ReactNode } from "react";
 import FileInput from "./FileInput";
 
 export const StyledFormRow = styled.div`
@@ -41,12 +41,13 @@ const Error = styled.span`
 
 type FormRowProps = {
   error?: any;
-  id: string;
+  id?: string;
   label: string;
+  children: ReactNode;
 };
 
 export const FormRow = forwardRef<HTMLInputElement, FormRowProps>(
-  ({ error, id, label, ...rest }, ref) => {
+  ({ error, id, label, children, ...rest }, ref) => {
     return (
       <StyledFormRow>
         <Label htmlFor={id}>{label}</Label>
@@ -55,6 +56,7 @@ export const FormRow = forwardRef<HTMLInputElement, FormRowProps>(
         ) : (
           <Input type="text" id={id} ref={ref} {...rest} />
         )}
+        {children}
         {error && <Error>{error}</Error>}
       </StyledFormRow>
     );
