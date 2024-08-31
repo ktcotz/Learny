@@ -51,7 +51,7 @@ export const FormRow = forwardRef<HTMLInputElement, FormRowProps>(
     return (
       <StyledFormRow>
         <Label htmlFor={id}>{label}</Label>
-        {id === "image" ? (
+        {!id ? null : id === "image" ? (
           <FileInput type="file" id={id} ref={ref} {...rest} />
         ) : (
           <Input type="text" id={id} ref={ref} {...rest} />
