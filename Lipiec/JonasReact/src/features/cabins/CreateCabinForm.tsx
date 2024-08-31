@@ -9,9 +9,10 @@ import { CabinData } from "./CabinRow";
 
 type CreateCabinFormProps = {
   cabinToEdit?: CabinData;
+  onClose?: () => void;
 };
 
-function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
+function CreateCabinForm({ cabinToEdit, onClose }: CreateCabinFormProps) {
   const isEditSession = !!cabinToEdit;
 
   const {
@@ -24,7 +25,6 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
     defaultValues: {
       ...cabinToEdit,
     },
-    
   });
 
   const { add, edit, isEditing, isAdding } = useAddEditCabin();
@@ -38,6 +38,7 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
         {
           onSuccess: () => {
             reset();
+            onClose?.();
           },
         }
       );
@@ -47,6 +48,7 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
         {
           onSuccess: () => {
             reset();
+            onClose?.();
           },
         }
       );
@@ -56,7 +58,10 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
   console.log(errors);
 
   return (
-    <Form onSubmit={handleSubmit(submitHandler)}>
+    <Form
+      onSubmit={handleSubmit(submitHandler)}
+      type={onClose ? "modal" : "regular"}
+    >
       <FormRow
         error={errors?.name?.message}
         {...register("name")}
@@ -97,7 +102,7 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
 
       <StyledFormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset">
+        <Button variation="secondary" type="reset" onClick={() => onClose?.()}>
           Cancel
         </Button>
         <Button disabled={isAdding || isEditing}>

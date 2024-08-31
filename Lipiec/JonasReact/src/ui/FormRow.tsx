@@ -43,7 +43,7 @@ type FormRowProps = {
   error?: any;
   id?: string;
   label: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export const FormRow = forwardRef<HTMLInputElement, FormRowProps>(
