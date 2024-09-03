@@ -7,3 +7,5 @@ Roadmap learny:
 * JavaScript (Done)
 * TypeScript (Done)
 * React with Next (In progress)
+* NestJS & Prisma (In progress) <a href="https://github.com/ktcotz/Backy">https://github.com/ktcotz/Backy</a>
+* Testing, React Testing Library, MSW, Vitest (In progress) <a href="https://github.com/ktcotz/Tester">https://github.com/ktcotz/Tester</a>
