@@ -98,7 +98,11 @@ const Row = ({ children }: { children: ReactNode }) => {
     </StyledRow>
   );
 };
-const Body = ({ children }: { children: ReactNode }) => {};
+const Body = ({ data, render }: { data: any; render: any }) => {
+  if (!data.length) return <Empty>No data to show at the moment.</Empty>;
+
+  return <StyledBody>{data.map(render)}</StyledBody>;
+};
 
 Table.Header = Header;
 Table.Row = Row;
