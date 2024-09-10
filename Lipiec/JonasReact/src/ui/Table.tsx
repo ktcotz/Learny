@@ -1,3 +1,4 @@
+import { createContext, ReactNode, useContext } from "react";
 import styled from "styled-components";
 
 const StyledTable = styled.div`
@@ -62,3 +63,44 @@ const Empty = styled.p`
   text-align: center;
   margin: 2.4rem;
 `;
+
+const TableContext = createContext();
+
+export const Table = ({
+  children,
+  columns,
+}: {
+  children: ReactNode;
+  columns: string;
+}) => {
+  return (
+    <TableContext.Provider value={{ columns }}>
+      <StyledTable role="table">{children}</StyledTable>
+    </TableContext.Provider>
+  );
+};
+
+const Header = ({ children }: { children: ReactNode }) => {
+  const { columns } = useContext(TableContext);
+
+  return (
+    <StyledHeader role="row" columns={columns} as="header">
+      {children}
+    </StyledHeader>
+  );
+};
+const Row = ({ children }: { children: ReactNode }) => {
+  const { columns } = useContext(TableContext);
+
+  return (
+    <StyledRow role="row" columns={columns}>
+      {children}
+    </StyledRow>
+  );
+};
+const Body = ({ children }: { children: ReactNode }) => {};
+
+Table.Header = Header;
+Table.Row = Row;
+Table.Body = Body;
+Table.Footer = Footer;
