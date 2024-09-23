@@ -17,3 +17,15 @@ const StyledSelect = styled.select<StyledSelectProps>`
   font-weight: 500;
   box-shadow: var(--shadow-sm);
 `;
+
+export const Select = ({ options, value, ...rest }) => {
+  return (
+    <StyledSelect value={value} {...rest}>
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </StyledSelect>
+  );
+};
