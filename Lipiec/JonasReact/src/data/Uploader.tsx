@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { isFuture, isPast, isToday } from "date-fns";
-import supabase from "../services/supabase";
-import Button from "../ui/Button";
+import { supabase } from "../services/supabase";
 import { subtractDates } from "../utils/helpers";
 
 import { bookings } from "./data-bookings";
 import { cabins } from "./data-cabins";
 import { guests } from "./data-guests";
+import { Button } from "../ui/Button";
 
 // const originalSettings = {
 //   minBookingLength: 3,
@@ -100,7 +100,7 @@ async function createBookings() {
   if (error) console.log(error.message);
 }
 
-function Uploader() {
+export function Uploader() {
   const [isLoading, setIsLoading] = useState(false);
 
   async function uploadAll() {
@@ -150,5 +150,3 @@ function Uploader() {
     </div>
   );
 }
-
-export default Uploader;
