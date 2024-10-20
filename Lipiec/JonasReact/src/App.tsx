@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import { AppLayout } from "./ui/AppLayout";
 import { Toaster } from "react-hot-toast";
+import { Booking } from "./pages/Booking";
+import { Checkin } from "./pages/Checkin";
 
 export const App = () => {
   return (
@@ -19,6 +21,8 @@ export const App = () => {
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="bookings" element={<Bookings />} />
+            <Route path="bookings/:bookingID" element={<Booking />} />
+            <Route path="checkin/:bookingID" element={<Checkin />} />
             <Route path="cabins" element={<Cabins />} />
             <Route path="users" element={<NewUsers />} />
             <Route path="settings" element={<Settings />} />

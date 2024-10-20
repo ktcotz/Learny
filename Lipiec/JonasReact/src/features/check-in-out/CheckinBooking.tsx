@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import BookingDataBox from "../bookings/BookingDataBox";
 
-import Row from "../../ui/Row";
-import Heading from "../../ui/Heading";
+import { Row } from "../../ui/Row";
+import { Heading } from "../../ui/Heading";
 import ButtonGroup from "../../ui/ButtonGroup";
-import Button from "../../ui/Button";
+import { Button } from "../../ui/Button";
 import ButtonText from "../../ui/ButtonText";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
+import { useParams } from "react-router";
+import { useBooking } from "../bookings/useBooking";
+import Spinner from "../../ui/Spinner";
 
 const Box = styled.div`
   /* Box */
@@ -20,7 +23,10 @@ const Box = styled.div`
 function CheckinBooking() {
   const moveBack = useMoveBack();
 
-  const booking = {};
+  const { bookingID } = useParams();
+  const { data: booking, isLoading } = useBooking(bookingID);
+
+  if (isLoading) return <Spinner />;
 
   const {
     id: bookingId,
@@ -36,14 +42,14 @@ function CheckinBooking() {
   return (
     <>
       <Row type="horizontal">
-        <Heading as="h1">Check in booking #{bookingId}</Heading>
+        <Heading as="h1">Check in booking #{bookingID}</Heading>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>
 
       <BookingDataBox booking={booking} />
 
       <ButtonGroup>
-        <Button onClick={handleCheckin}>Check in booking #{bookingId}</Button>
+        <Button onClick={handleCheckin}>Check in booking #{bookingID}</Button>
         <Button variation="secondary" onClick={moveBack}>
           Back
         </Button>
