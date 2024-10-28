@@ -1,3 +1,4 @@
+import { Logo } from "@/components/Logo";
 import { Navigation } from "@/components/Navigation";
 import type { Metadata } from "next";
 
@@ -14,7 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <Navigation />
+        <header>
+          <Logo />
+          <Navigation />
+        </header>
         {children}
       </body>
     </html>
