@@ -2,7 +2,8 @@ export default async function Projects() {
   const response = await fetch("http://localhost:3001/repos");
   const repos = await response.json();
 
-  console.log(repos);
+  throw new Error("Failed to fetch repos");
+
   return (
     <div>
       <h1 className="mb-8 text-xl">Projects</h1>
